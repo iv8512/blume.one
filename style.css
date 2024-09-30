@@ -1,0 +1,27 @@
+body {
+    background-color: #1B1B1B;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+p {
+    color: #F3F3F3;
+}
+
+/* links */
+a {
+    color: goldenrod;
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: gold;
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+}
