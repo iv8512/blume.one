@@ -4,10 +4,15 @@ body {
 
 h1 {
     color: #FFFFFF;
+    text-align: center;
 }
 
 p {
     color: #F3F3F3;
+}
+
+ol {
+    color: rgb(141, 104, 11);
 }
 
 /* links */
