@@ -5,6 +5,7 @@ body {
 h1 {
     color: #FFFFFF;
     text-align: center;
+    font-size: 3em;
 }
 
 p {
@@ -13,6 +14,7 @@ p {
 
 ol {
     color: rgb(141, 104, 11);
+    font-size: 1.5em;
 }
 
 /* links */
