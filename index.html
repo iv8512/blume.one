@@ -12,52 +12,114 @@
 </head>
 
 <body>
-    <div class="d-flex justify-content-around">
-        <div>
-            <h1>CS2</h1>
-            <ol>
-                <li><a href="https://www.faceit.com/">Faceit</a></li>
-                <li><a href="https://faceitanalyser.com/">Faceit Analyser</a></li>
-                <li><a href="https://faceitfinder.com/">Faceit Finder</a></li>
-                <li><a href="https://play.refrag.gg/">Refrag</a></li>
-                <li><a href="https://xplay.gg/">xplay</a></li>
-                <li><a href="https://csnades.gg/">CSNades</a></li>
-                <li><a href="https://csgocallouts.com/">CSCallouts</a></li>
-                <li><a href="https://csgoskins.gg/">CSSkins</a></li>
-                <li><a href="https://csfloat.com/">CSFloat</a></li>
-                <li><a href="https://csstats.gg/">CSStats</a></li>
-                <li><a href="https://leetify.com/app">Leetify</a></li>
-                <li><a href="https://renown.gg/play">Renown</a></li>
-                <li><a href="https://cs2inspects.com/">CS2 Inspects</a></li>
-            </ol>
-        </div>
-        <div>
-            <h1>Rust</h1>
-            <ol>
-                <li><a href="https://rusthelp.com/en">RustHelp</a></li>
-                <li><a href="https://rustlabs.com/">Rust Labs</a></li>
-                <li><a href="https://wiki.facepunch.com/rust/">Rust Wiki</a></li>
-                <li><a href="https://www.battlemetrics.com/servers/rust">BattleMetrics</a></li>
-                <li><a href="https://twitch.facepunch.com/#drops">Twitch Drops</a></li>
-            </ol>
-        </div>
-        <div>
-            <h1>Other</h1>
-            <ol>
-                <li><a href="https://www.google.com/">Google</a></li>
-                <li><a href="https://translate.google.com/">Google Translate</a></li>
-                <li><a href="https://www.youtube.com/">YouTube</a></li>
-                <li><a href="https://store.steampowered.com/">Steam</a></li>
-                <li><a href="https://steamdb.info/">SteamDB</a></li>
-            </ol>
+    <div class="absolute inset-x-0 top-0 flex h-[88px] items-center justify-center" style=top:0px>
+        <div class="absolute inset-x-0 -mt-[22%] flex items-center sm:mt-0">
+            <div class="absolute inset-0 w-full h-[680px] overflow-hidden pointer-events-none -mt-64">
+                <div class="max-w-screen w-full h-[680px] relative pt-64">
+                    <div>
+                        <div class=lightbar>
+                            <div class=lightbar-visual></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom justify-content-center">
-        <a href="https://pastebin.com/FDgNusSc"><img src="blume.gif" alt="logo" style="width:40px; margin: 0;"></a>
+    <div class="container">
+        <div class="link-grid">
+            <div class="card">
+                <h1>CS2</h1>
+                <ol>
+                    <li><a href="https://www.faceit.com/">Faceit</a></li>
+                    <li><a href="https://faceitanalyser.com/">Faceit Analyser</a></li>
+                    <li><a href="https://faceitfinder.com/">Faceit Finder</a></li>
+                    <li><a href="https://play.refrag.gg/">Refrag</a></li>
+                    <li><a href="https://xplay.gg/">xplay</a></li>
+                    <li><a href="https://csnades.gg/">CSNades</a></li>
+                    <li><a href="https://csgocallouts.com/">CSCallouts</a></li>
+                    <li><a href="https://csgoskins.gg/">CSSkins</a></li>
+                    <li><a href="https://csfloat.com/">CSFloat</a></li>
+                    <li><a href="https://csstats.gg/">CSStats</a></li>
+                    <li><a href="https://leetify.com/app">Leetify</a></li>
+                    <li><a href="https://renown.gg/play">Renown</a></li>
+                    <li><a href="https://cs2inspects.com/">CS2 Inspects</a></li>
+                </ol>
+            </div>
+            <div class="card">
+                <h1>Rust</h1>
+                <ol>
+                    <li><a href="https://rusthelp.com/en">RustHelp</a></li>
+                    <li><a href="https://rustlabs.com/">Rust Labs</a></li>
+                    <li><a href="https://wiki.facepunch.com/rust/">Rust Wiki</a></li>
+                    <li><a href="https://www.battlemetrics.com/servers/rust">BattleMetrics</a></li>
+                    <li><a href="https://twitch.facepunch.com/#drops">Twitch Drops</a></li>
+                </ol>
+            </div>
+            <div class="card">
+                <h1>Other</h1>
+                <ol>
+                    <li><a href="https://www.google.com/">Google</a></li>
+                    <li><a href="https://translate.google.com/">Google Translate</a></li>
+                    <li><a href="https://www.youtube.com/">YouTube</a></li>
+                    <li><a href="https://store.steampowered.com/">Steam</a></li>
+                    <li><a href="https://steamdb.info/">SteamDB</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="google-search-wrapper">
+            <form class="google-search" action="https://www.google.com/search" method="get" target="_blank">
+                <input type="text" name="q" placeholder="Search Google..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
     </div>
+
+    <footer class="site-footer">
+        <a href="https://pastebin.com/FDgNusSc"><img src="blume.gif" alt="logo" class="brand-img"></a>
+    </footer>
+
+    <section class="second-page">
+        <div class="second-page-content">
+            <h2>Second Page</h2>
+            <p>Coming soon.</p>
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+    <script>
+        // Unified cursor-follow glow for search bar and cards
+        (function () {
+            function attachCursorGlow(el, opts) {
+                const leaveDelay = (opts && opts.leaveDelay) || 420;
+                let leaveTimer;
+                function update(e) {
+                    const r = el.getBoundingClientRect();
+                    const x = ((e.clientX - r.left) / r.width) * 100;
+                    const y = ((e.clientY - r.top) / r.height) * 100;
+                    el.style.setProperty('--mx', x.toFixed(2) + '%');
+                    el.style.setProperty('--my', y.toFixed(2) + '%');
+                }
+                el.addEventListener('mousemove', update);
+                el.addEventListener('mouseenter', (e) => {
+                    el.classList.remove('glow-leave');
+                    update(e);
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.classList.add('glow-leave');
+                    if (leaveTimer) clearTimeout(leaveTimer);
+                    leaveTimer = setTimeout(() => el.classList.remove('glow-leave'), leaveDelay);
+                });
+            }
+
+            // Search bar
+            const search = document.querySelector('.google-search');
+            if (search) attachCursorGlow(search, { leaveDelay: 420 });
+
+            // Cards
+            document.querySelectorAll('.card').forEach((el) => attachCursorGlow(el, { leaveDelay: 420 }));
+        })();
+    </script>
 </body>
 
 </html>
