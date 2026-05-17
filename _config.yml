@@ -1,0 +1,8 @@
+title: blume.one
+url: https://blume.one
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - todo.md
