@@ -25,6 +25,14 @@
     color: var(--accent);
 }
 
+.section-title {
+    cursor: pointer;
+}
+
+.section-title:hover {
+    color: var(--accent-weak);
+}
+
 .second-page-content ol {
     text-align: left;
     display: inline-block;

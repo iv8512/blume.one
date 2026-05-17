@@ -1,7 +1,7 @@
 {% assign arc = site.data.links.games | where: "id", "arc-raiders" | first %}
 <section class="second-page" id="arc-raiders">
     <div class="second-page-content">
-        <h2>ARC Raiders</h2>
+        <h2 class="section-title">ARC Raiders</h2>
         <ol>
             {% for link in arc.links %}
             <li><a href="{{ link.url }}">{{ link.name }}</a></li>

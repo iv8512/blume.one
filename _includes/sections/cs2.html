@@ -1,54 +1,111 @@
 {% assign cs2 = site.data.links.games | where: "id", "cs2" | first %}
 <section class="second-page" id="cs2">
     <div class="second-page-content second-page-content--wide">
-        <h2>CS2</h2>
-        <div class="cs2-layout">
-            <div class="cs2-links">
-                <h3>Links</h3>
-                <ol>
-                    {% for link in cs2.links %}
-                    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
-                    {% endfor %}
-                </ol>
-            </div>
-            <div class="cs2-commands">
-                <h3>Practice Commands</h3>
-                <p class="commands-hint">Click a command to copy</p>
-                <div class="cmd-group">
-                    <div class="cmd-group-label">Setup</div>
-                    <div class="cmd" data-cmd="sv_cheats 1"><span class="cmd-text">sv_cheats 1</span><span class="cmd-desc">Enable cheats</span></div>
-                    <div class="cmd" data-cmd="mp_limitteams 0"><span class="cmd-text">mp_limitteams 0</span><span class="cmd-desc">Remove team size limit</span></div>
-                    <div class="cmd" data-cmd="mp_autoteambalance 0"><span class="cmd-text">mp_autoteambalance 0</span><span class="cmd-desc">Disable auto balance</span></div>
-                    <div class="cmd" data-cmd="mp_maxmoney 100000"><span class="cmd-text">mp_maxmoney 100000</span><span class="cmd-desc">Max money cap</span></div>
-                    <div class="cmd" data-cmd="mp_startmoney 100000"><span class="cmd-text">mp_startmoney 100000</span><span class="cmd-desc">Start with max money</span></div>
-                    <div class="cmd" data-cmd="mp_buytime 9999"><span class="cmd-text">mp_buytime 9999</span><span class="cmd-desc">Buy anytime</span></div>
-                    <div class="cmd" data-cmd="mp_buy_anywhere 1"><span class="cmd-text">mp_buy_anywhere 1</span><span class="cmd-desc">Buy anywhere</span></div>
-                    <div class="cmd" data-cmd="mp_roundtime_defuse 60"><span class="cmd-text">mp_roundtime_defuse 60</span><span class="cmd-desc">60 min round time</span></div>
-                    <div class="cmd" data-cmd="mp_restartgame 1"><span class="cmd-text">mp_restartgame 1</span><span class="cmd-desc">Restart game</span></div>
+        <h2 class="section-title">CS2</h2>
+        <div class="cs2-body">
+
+            <div class="cs2-col cs2-col--left">
+                <div class="cs2-block">
+                    <h3>Links</h3>
+                    <div class="cs2-link-groups">
+                        <div class="cs2-link-group">
+                            <div class="cs2-link-group-label">Platform</div>
+                            <div class="cs2-pills">
+                                <a href="https://www.faceit.com/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/faceit.com.ico" alt="">Faceit</a>
+                                <a href="https://faceitanalyser.com/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/faceitanalyser.com.ico" alt="">Faceit Analyser</a>
+                                <a href="https://faceitfinder.com/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/faceitfinder.com.ico" alt="">Faceit Finder</a>
+                            </div>
+                        </div>
+                        <div class="cs2-link-group">
+                            <div class="cs2-link-group-label">Stats &amp; Analysis</div>
+                            <div class="cs2-pills">
+                                <a href="https://csstats.gg/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/csstats.gg.ico" alt="">CSStats</a>
+                                <a href="https://leetify.com/app" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/leetify.com.ico" alt="">Leetify</a>
+                            </div>
+                        </div>
+                        <div class="cs2-link-group">
+                            <div class="cs2-link-group-label">Practice</div>
+                            <div class="cs2-pills">
+                                <a href="https://play.refrag.gg/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/refrag.gg.ico" alt="">Refrag</a>
+                                <a href="https://xplay.gg/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/xplay.gg.ico" alt="">xplay</a>
+                                <a href="https://csnades.gg/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/csnades.gg.ico" alt="">CSNades</a>
+                                <a href="https://csgocallouts.com/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/csgocallouts.com.ico" alt="">CSCallouts</a>
+                            </div>
+                        </div>
+                        <div class="cs2-link-group">
+                            <div class="cs2-link-group-label">Skins</div>
+                            <div class="cs2-pills">
+                                <a href="https://csgoskins.gg/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/csgoskins.gg.ico" alt="">CSSkins</a>
+                                <a href="https://csfloat.com/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/csfloat.com.ico" alt="">CSFloat</a>
+                                <a href="https://cs2inspects.com/" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/cs2inspects.com.ico" alt="">CS2 Inspects</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="cmd-group">
-                    <div class="cmd-group-label">Grenades</div>
-                    <div class="cmd" data-cmd="sv_grenade_trajectory_prac_pipreview 1"><span class="cmd-text">sv_grenade_trajectory_prac_pipreview 1</span><span class="cmd-desc">Nade trajectory preview</span></div>
-                    <div class="cmd" data-cmd="sv_grenade_trajectory_prac_trailtime 10"><span class="cmd-text">sv_grenade_trajectory_prac_trailtime 10</span><span class="cmd-desc">Trail duration (seconds)</span></div>
-                    <div class="cmd" data-cmd="sv_showimpacts 1"><span class="cmd-text">sv_showimpacts 1</span><span class="cmd-desc">Show bullet impacts</span></div>
-                    <div class="cmd" data-cmd="sv_showimpacts_time 10"><span class="cmd-text">sv_showimpacts_time 10</span><span class="cmd-desc">Impact display duration</span></div>
-                    <div class="cmd" data-cmd="sv_rethrow_last_grenade"><span class="cmd-text">sv_rethrow_last_grenade</span><span class="cmd-desc">Rethrow last grenade</span></div>
-                    <div class="cmd" data-cmd="sv_infinite_ammo 2"><span class="cmd-text">sv_infinite_ammo 2</span><span class="cmd-desc">Infinite ammo, no reload</span></div>
-                </div>
-                <div class="cmd-group">
-                    <div class="cmd-group-label">Movement &amp; Misc</div>
-                    <div class="cmd" data-cmd="noclip"><span class="cmd-text">noclip</span><span class="cmd-desc">Toggle noclip</span></div>
-                    <div class="cmd" data-cmd="god"><span class="cmd-text">god</span><span class="cmd-desc">God mode</span></div>
-                    <div class="cmd" data-cmd="bot_kick"><span class="cmd-text">bot_kick</span><span class="cmd-desc">Kick all bots</span></div>
+
+                <div class="cs2-block">
+                    <h3>URL Aliases</h3>
+                    <div class="cs2-aliases">
+                        <div class="cs2-alias">
+                            <span class="cs2-alias-from"><span class="cs2-alias-diff">w</span>steamcommunity.com</span>
+                            <span class="cs2-alias-arrow">→</span>
+                            <a href="https://cswatch.in/" class="cs2-alias-to">cswatch.in</a>
+                        </div>
+                        <div class="cs2-alias">
+                            <span class="cs2-alias-from"><span class="cs2-alias-diff">x</span>steamcommunity.com</span>
+                            <span class="cs2-alias-arrow">→</span>
+                            <a href="https://csstats.gg/" class="cs2-alias-to">csstats.gg</a>
+                        </div>
+                        <div class="cs2-alias">
+                            <span class="cs2-alias-from">steamcommunity<span class="cs2-alias-diff">.gg</span></span>
+                            <span class="cs2-alias-arrow">→</span>
+                            <a href="https://leetify.com/" class="cs2-alias-to">leetify.com</a>
+                        </div>
+                        <div class="cs2-alias">
+                            <span class="cs2-alias-from">steamcommunity<span class="cs2-alias-diff">.rip</span></span>
+                            <span class="cs2-alias-arrow">→</span>
+                            <a href="https://csst.at/" class="cs2-alias-to">csst.at</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="cs2-quicksetup">
-            <h3>Quick Setup</h3>
-            <p class="commands-hint">Click to copy</p>
-            <div class="cmd cmd--full" data-cmd="sv_cheats 1; mp_freezetime 0; mp_roundtime_defuse 60; sv_infinite_ammo 2; mp_restartgame 1; bot_kick; mp_warmup_end; mp_buytime 6000; mp_buy_anywhere 1; mp_maxmoney 100000; mp_startmoney 100000">
-                <span class="cmd-text cmd-text--full">sv_cheats 1; mp_freezetime 0; mp_roundtime_defuse 60; sv_infinite_ammo 2; mp_restartgame 1; bot_kick; mp_warmup_end; mp_buytime 6000; mp_buy_anywhere 1; mp_maxmoney 100000; mp_startmoney 100000</span>
+
+            <div class="cs2-col cs2-col--right">
+                <div class="cs2-block cs2-commands">
+                    <h3>Practice Commands</h3>
+                    <div class="cmd-group">
+                        <div class="cmd-group-label">Setup</div>
+                        <div class="cmd" data-cmd="sv_cheats 1"><span class="cmd-text">sv_cheats 1</span><span class="cmd-desc">Enable cheats</span></div>
+                        <div class="cmd" data-cmd="mp_limitteams 0"><span class="cmd-text">mp_limitteams 0</span><span class="cmd-desc">Remove team size limit</span></div>
+                        <div class="cmd" data-cmd="mp_autoteambalance 0"><span class="cmd-text">mp_autoteambalance 0</span><span class="cmd-desc">Disable auto balance</span></div>
+                        <div class="cmd" data-cmd="mp_restartgame 1"><span class="cmd-text">mp_restartgame 1</span><span class="cmd-desc">Restart game</span></div>
+                    </div>
+                    <div class="cmd-group">
+                        <div class="cmd-group-label">Grenades</div>
+                        <div class="cmd" data-cmd="sv_grenade_trajectory_prac_pipreview 1"><span class="cmd-text">sv_grenade_trajectory_prac_pipreview 1</span><span class="cmd-desc">Nade trajectory preview</span></div>
+                        <div class="cmd" data-cmd="sv_grenade_trajectory_prac_trailtime 10"><span class="cmd-text">sv_grenade_trajectory_prac_trailtime 10</span><span class="cmd-desc">Trail duration (seconds)</span></div>
+                        <div class="cmd" data-cmd="sv_showimpacts 1"><span class="cmd-text">sv_showimpacts 1</span><span class="cmd-desc">Show bullet impacts</span></div>
+                        <div class="cmd" data-cmd="sv_rethrow_last_grenade"><span class="cmd-text">sv_rethrow_last_grenade</span><span class="cmd-desc">Rethrow last grenade</span></div>
+                    </div>
+                    <div class="cmd-group">
+                        <div class="cmd-group-label">Movement &amp; Misc</div>
+                        <div class="cmd" data-cmd="noclip"><span class="cmd-text">noclip</span><span class="cmd-desc">Toggle noclip</span></div>
+                        <div class="cmd" data-cmd="bot_kick"><span class="cmd-text">bot_kick</span><span class="cmd-desc">Kick all bots</span></div>
+                    </div>
+                </div>
+
+                <div class="cs2-block cs2-quicksetup">
+                    <h3>Quick Setup</h3>
+                    <div class="cmd cmd--full" data-cmd="sv_cheats 1; mp_freezetime 0; mp_roundtime_defuse 60; sv_infinite_ammo 2; mp_restartgame 1; bot_kick; mp_warmup_end; mp_buytime 6000; mp_buy_anywhere 1; mp_maxmoney 100000; mp_startmoney 100000">
+                        <span class="cmd-text cmd-text--full">sv_cheats 1; mp_freezetime 0; mp_roundtime_defuse 60; sv_infinite_ammo 2; mp_restartgame 1; bot_kick; mp_warmup_end; mp_buytime 6000; mp_buy_anywhere 1; mp_maxmoney 100000; mp_startmoney 100000</span>
+                    </div>
+                    <div class="cmd-group-label cs2-quicksetup-extras-label">Extras</div>
+                    <div class="cmd cmd--full" data-cmd="sv_regeneration_force_on true; sv_grenade_trajectory_prac_trailtime 5; sv_falldamage_scale 0">
+                        <span class="cmd-text cmd-text--full">sv_regeneration_force_on true; sv_grenade_trajectory_prac_trailtime 5; sv_falldamage_scale 0</span>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </section>

@@ -62,6 +62,10 @@
             document.querySelectorAll('.card').forEach((el) => attachCursorGlow(el, { leaveDelay: 420 }));
         })();
 
+        document.querySelectorAll('.section-title').forEach((el) => {
+            el.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        });
+
         document.querySelectorAll('.cmd').forEach((el) => {
             el.addEventListener('click', () => {
                 const cmd = el.dataset.cmd;

@@ -1,51 +1,162 @@
-.cs2-layout {
+/* ── layout ─────────────────────────────────────────── */
+
+.cs2-body {
     display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
     text-align: left;
     margin-top: 8px;
+    align-items: start;
+}
+
+.cs2-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     min-width: 0;
 }
 
-.cs2-links, .cs2-commands { min-width: 0; }
-
-.cs2-quicksetup {
-    margin-top: 24px;
-    min-width: 0;
+.cs2-block {
+    background: rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 16px 18px;
 }
 
-.cs2-links h3,
-.cs2-commands h3,
-.cs2-quicksetup h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--accent);
-    border-bottom: 1px solid rgba(197,155,26,0.25);
-    padding-bottom: 6px;
-    margin: 0 0 10px 0;
-}
-
-.cs2-links ol {
-    display: block;
-    margin: 0 0 0 20px;
-}
-
-.commands-hint {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin: -6px 0 10px 0;
-    opacity: 0.7;
-}
-
-.cmd-group { margin-bottom: 16px; }
-
-.cmd-group-label {
-    font-size: 0.72rem;
+.cs2-block h3 {
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.9;
+    border-bottom: 1px solid rgba(197,155,26,0.2);
+    padding-bottom: 8px;
+    margin: 0 0 12px 0;
+}
+
+/* ── pill links ─────────────────────────────────────── */
+
+.cs2-link-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cs2-link-group-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--muted);
-    opacity: 0.6;
+    opacity: 0.55;
+    margin-bottom: 6px;
+}
+
+.cs2-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.cs2-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 13px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    transition: background .13s, border-color .13s, color .13s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.cs2-pill-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.cs2-pill:hover {
+    background: rgba(197,155,26,0.12);
+    border-color: rgba(197,155,26,0.4);
+    color: var(--accent-weak);
+    transform: none;
+}
+
+/* ── url aliases ─────────────────────────────────────── */
+
+.cs2-aliases {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cs2-alias {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.82rem;
+}
+
+.cs2-alias-from {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(154, 164, 178, 0.65);
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cs2-alias-diff {
+    color: var(--accent);
+    opacity: 1;
+}
+
+.cs2-alias-arrow {
+    color: var(--accent);
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+.cs2-alias-to {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--accent-weak);
+    flex-shrink: 0;
+}
+
+.cs2-alias-to:hover {
+    color: var(--accent);
+    transform: none;
+}
+
+/* ── commands ────────────────────────────────────────── */
+
+.commands-hint {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin: -6px 0 10px 0;
+    opacity: 0.55;
+}
+
+.cmd-group { margin-bottom: 14px; }
+.cmd-group:last-child { margin-bottom: 0; }
+
+.cmd-group-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.5;
     margin-bottom: 4px;
 }
 
@@ -72,41 +183,38 @@
 
 .cmd-text {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--accent-weak);
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 .cmd-desc {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--muted);
-    opacity: 0.75;
+    opacity: 0.65;
+}
+
+/* ── quick setup ─────────────────────────────────────── */
+
+.cs2-quicksetup-extras-label {
+    margin-top: 12px;
+    margin-bottom: 4px;
 }
 
 .cmd--full {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
-    margin-bottom: 18px;
-    background: rgba(197,155,26,0.05);
-    border-color: rgba(197,155,26,0.2);
+    background: rgba(197,155,26,0.04);
+    border: 1px solid rgba(197,155,26,0.18);
     padding: 10px 12px;
     min-width: 0;
 }
 
 .cmd--full:hover {
-    background: rgba(197,155,26,0.1);
-    border-color: rgba(197,155,26,0.35);
-}
-
-.cmd-full-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    opacity: 0.85;
+    background: rgba(197,155,26,0.09);
+    border-color: rgba(197,155,26,0.32);
 }
 
 .cmd-text--full {
@@ -115,11 +223,13 @@
     flex-shrink: 1;
     min-width: 0;
     width: 100%;
-    font-size: 0.8rem;
-    line-height: 1.5;
+    font-size: 0.78rem;
+    line-height: 1.6;
 }
 
+/* ── responsive ─────────────────────────────────────── */
+
 @media (max-width: 900px) {
-    .cs2-layout { grid-template-columns: 1fr; gap: 24px; }
+    .cs2-body { grid-template-columns: 1fr; }
     .second-page-content--wide { max-width: 100%; }
 }
