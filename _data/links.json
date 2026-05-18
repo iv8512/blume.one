@@ -1,0 +1,59 @@
+{
+  "games": [
+    {
+      "id": "cs2",
+      "title": "CS2",
+      "span": 2,
+      "aliases": [
+        { "before": "",             "diff": "w",    "after": "steamcommunity.com", "to_name": "cswatch.in",  "to_url": "https://cswatch.in/" },
+        { "before": "",             "diff": "x",    "after": "steamcommunity.com", "to_name": "csstats.gg",  "to_url": "https://csstats.gg/" },
+        { "before": "steamcommunity", "diff": ".gg",  "after": "",                 "to_name": "leetify.com", "to_url": "https://leetify.com/" },
+        { "before": "steamcommunity", "diff": ".rip", "after": "",                 "to_name": "csst.at",     "to_url": "https://csst.at/" }
+      ],
+      "links": [
+        { "name": "Faceit",          "url": "https://www.faceit.com/",       "group": "Platform",        "domain": "faceit.com" },
+        { "name": "Faceit Analyser", "url": "https://faceitanalyser.com/",   "group": "Platform",        "domain": "faceitanalyser.com" },
+        { "name": "Faceit Finder",   "url": "https://faceitfinder.com/",     "group": "Platform",        "domain": "faceitfinder.com" },
+        { "name": "CSStats",         "url": "https://csstats.gg/",           "group": "Stats & Analysis","domain": "csstats.gg" },
+        { "name": "Leetify",         "url": "https://leetify.com/app",       "group": "Stats & Analysis","domain": "leetify.com" },
+        { "name": "Refrag",          "url": "https://play.refrag.gg/",       "group": "Practice",        "domain": "refrag.gg" },
+        { "name": "xplay",           "url": "https://xplay.gg/",             "group": "Practice",        "domain": "xplay.gg" },
+        { "name": "CSNades",         "url": "https://csnades.gg/",           "group": "Practice",        "domain": "csnades.gg" },
+        { "name": "CSCallouts",      "url": "https://csgocallouts.com/",     "group": "Practice",        "domain": "csgocallouts.com" },
+        { "name": "CSSkins",         "url": "https://csgoskins.gg/",         "group": "Skins",           "domain": "csgoskins.gg" },
+        { "name": "CSFloat",         "url": "https://csfloat.com/",          "group": "Skins",           "domain": "csfloat.com" },
+        { "name": "CS2 Inspects",    "url": "https://cs2inspects.com/",      "group": "Skins",           "domain": "cs2inspects.com" }
+      ]
+    },
+    {
+      "id": "rust",
+      "title": "Rust",
+      "section": false,
+      "links": [
+        { "name": "RustHelp",      "url": "https://rusthelp.com/en" },
+        { "name": "Rust Labs",     "url": "https://rustlabs.com/" },
+        { "name": "Rust Wiki",     "url": "https://wiki.facepunch.com/rust/" },
+        { "name": "BattleMetrics", "url": "https://www.battlemetrics.com/servers/rust" },
+        { "name": "Twitch Drops",  "url": "https://twitch.facepunch.com/#drops" }
+      ]
+    },
+    {
+      "id": "arc-raiders",
+      "title": "ARC Raiders",
+      "links": [
+        { "name": "Official Site",    "url": "https://arcraiders.com/" },
+        { "name": "SteamDB",          "url": "https://steamdb.info/app/1808500/charts/" },
+        { "name": "MetaForge",        "url": "https://metaforge.app/arc-raiders" },
+        { "name": "ARC Raiders Wiki", "url": "https://arcraiders.wiki/" }
+      ]
+    }
+  ],
+  "other": [
+    { "name": "Google",           "url": "https://www.google.com/" },
+    { "name": "Google Translate", "url": "https://translate.google.com/" },
+    { "name": "YouTube",          "url": "https://www.youtube.com/" },
+    { "name": "Steam",            "url": "https://store.steampowered.com/" },
+    { "name": "SteamDB",          "url": "https://steamdb.info/" },
+    { "name": "Extensions",       "url": "chrome://extensions/" }
+  ]
+}
