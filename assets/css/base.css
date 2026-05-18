@@ -42,6 +42,8 @@ h1 {
 
 ol { margin: 12px 0 0 24px; padding: 0; }
 ol li { margin: 14px 0; font-size: 1.18rem; color: var(--muted); }
+ol li a { color: var(--accent); display: block; transition: padding-left .12s ease; }
+ol li a:hover { color: var(--accent-weak); padding-left: 3px; transform: none; }
 
 a {
     color: var(--accent);
@@ -53,11 +55,33 @@ a:active { color: var(--text); }
 
 footer.site-footer {
     padding: 14px 0;
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.9rem;
-    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+}
+
+.footer-source,
+.footer-link {
+    flex: 1;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    transition: none;
+}
+
+.footer-source {
+    color: #6b7785;
+    text-align: right;
+    margin-right: 14px;
+}
+
+.footer-link { margin-left: 14px; color: #8a94a8; }
+.footer-link-name { color: #8a94a8; }
+.footer-link-tld { color: #6b7785; }
+
+.site-footer a:hover {
+    color: var(--muted);
+    transform: none;
 }
 
 .brand-img { width: 36px; vertical-align: middle; }
