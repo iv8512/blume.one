@@ -1,0 +1,31 @@
+name: Update Schedule
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # daily at 6am UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch schedule
+        run: |
+          curl -sf https://metaforge.app/api/arc-raiders/events-schedule \
+            -o _data/events-schedule.json.new
+
+      - name: Commit if changed
+        run: |
+          if [ ! -f _data/events-schedule.json ] || ! diff -q _data/events-schedule.json _data/events-schedule.json.new > /dev/null 2>&1; then
+            mv _data/events-schedule.json.new _data/events-schedule.json
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add _data/events-schedule.json
+            git commit -m "chore: update event schedule"
+            git push
+          else
+            echo "No changes, skipping commit."
+            rm _data/events-schedule.json.new
+          fi
