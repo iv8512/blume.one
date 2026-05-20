@@ -221,6 +221,13 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.arc-events-section::-webkit-scrollbar {
+    display: none;
 }
 
 .arc-events-bar {
@@ -321,6 +328,118 @@
     color: var(--muted);
     opacity: 0.3;
     font-style: italic;
+}
+
+/* ── upcoming filters ────────────────────────────────── */
+
+.arc-upcoming-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.arc-filter-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.arc-filter-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.4;
+    padding-top: 4px;
+    white-space: nowrap;
+    min-width: 36px;
+}
+
+.arc-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.arc-filter-btn {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .12s, border-color .12s, color .12s;
+}
+
+.arc-filter-btn--map {
+    border-radius: 4px;
+}
+
+.arc-filter-btn--event {
+    border-radius: 20px;
+}
+
+.arc-filter-btn:hover {
+    background: rgba(120,200,100,0.08);
+    border-color: rgba(120,200,100,0.25);
+    color: #a8d890;
+}
+
+.arc-filter-btn--active {
+    background: rgba(120,200,100,0.12);
+    border-color: rgba(120,200,100,0.35);
+    color: #a8d890;
+}
+
+/* ── upcoming slots ──────────────────────────────────── */
+
+.arc-upcoming {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.arc-upcoming-slot {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.arc-upcoming-time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.5;
+}
+
+.arc-upcoming-in {
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--muted);
+    opacity: 0.7;
+}
+
+.arc-map-grid--upcoming {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.arc-map-grid--upcoming .arc-map-card {
+    opacity: 0.6;
 }
 
 /* ── responsive ──────────────────────────────────────── */

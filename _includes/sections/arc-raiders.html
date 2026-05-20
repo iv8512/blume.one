@@ -22,6 +22,17 @@
                     </div>
                     <div id="arc-events-msg" class="arc-events-msg">Loading...</div>
                     <div id="arc-map-grid" class="arc-map-grid" style="display:none"></div>
+                    <div id="arc-upcoming-filters" class="arc-upcoming-filters" style="display:none">
+                        <div class="arc-filter-group">
+                            <span class="arc-filter-label">Map</span>
+                            <div id="arc-filter-maps" class="arc-filter-row"></div>
+                        </div>
+                        <div class="arc-filter-group">
+                            <span class="arc-filter-label">Event</span>
+                            <div id="arc-filter-events" class="arc-filter-row"></div>
+                        </div>
+                    </div>
+                    <div id="arc-upcoming" class="arc-upcoming" style="display:none"></div>
                 </div>
 
                 <div class="arc-bp-section">
@@ -57,35 +68,25 @@
     var schedule = (SCHEDULE && SCHEDULE.data) || [];
     var now = Date.now();
 
-    var current = schedule.filter(function (e) {
-        return e.startTime <= now && now < e.endTime;
-    });
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
-    var msgEl = document.getElementById('arc-events-msg');
-    var gridEl = document.getElementById('arc-map-grid');
+    function formatTime(ms) {
+        var d = new Date(ms);
+        return pad(d.getHours()) + ':' + pad(d.getMinutes());
+    }
 
-    if (!current.length) {
-        msgEl.textContent = 'No events found for this time slot.';
-    } else {
-        var endTime = current[0].endTime;
-
-        function pad(n) { return n < 10 ? '0' + n : '' + n; }
-        function tick() {
-            var diff = Math.max(0, endTime - Date.now());
-            var m = Math.floor(diff / 60000);
-            var s = Math.floor((diff % 60000) / 1000);
-            document.getElementById('arc-countdown').textContent = m + ':' + pad(s);
-        }
-        setInterval(tick, 1000);
-        tick();
-
+    function groupByMap(events) {
         var byMap = {};
-        current.forEach(function (e) {
+        events.forEach(function (e) {
             if (!byMap[e.map]) byMap[e.map] = [];
             byMap[e.map].push(e);
         });
+        return byMap;
+    }
 
-        gridEl.innerHTML = Object.keys(byMap).sort().map(function (mapName) {
+    function renderMapGrid(events) {
+        var byMap = groupByMap(events);
+        return Object.keys(byMap).sort().map(function (mapName) {
             var items = byMap[mapName].map(function (e) {
                 return '<div class="arc-event-item">'
                     + '<img class="arc-event-icon" src="' + e.icon + '" alt="" loading="lazy">'
@@ -97,9 +98,147 @@
                 + '<div class="arc-event-list">' + items + '</div>'
                 + '</div>';
         }).join('');
+    }
 
+    // Group all events into distinct time slots
+    var slotMap = {};
+    schedule.forEach(function (e) {
+        var key = e.startTime + '_' + e.endTime;
+        if (!slotMap[key]) slotMap[key] = { startTime: e.startTime, endTime: e.endTime, events: [] };
+        slotMap[key].events.push(e);
+    });
+    var slots = Object.values(slotMap).sort(function (a, b) { return a.startTime - b.startTime; });
+
+    var currentSlot = slots.find(function (s) { return s.startTime <= now && now < s.endTime; });
+    var futureSlots = slots.filter(function (s) { return s.startTime >= (currentSlot ? currentSlot.endTime : now); });
+
+    var msgEl = document.getElementById('arc-events-msg');
+    var gridEl = document.getElementById('arc-map-grid');
+    var upcomingEl = document.getElementById('arc-upcoming');
+
+    if (!currentSlot) {
+        msgEl.textContent = 'No events found for this time slot.';
+    } else {
+        function tick() {
+            var diff = Math.max(0, currentSlot.endTime - Date.now());
+            var m = Math.floor(diff / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('arc-countdown').textContent = m + ':' + pad(s);
+        }
+        setInterval(tick, 1000);
+        tick();
+
+        gridEl.innerHTML = renderMapGrid(currentSlot.events);
         msgEl.style.display = 'none';
         gridEl.style.display = 'grid';
+    }
+
+    function formatIn(ms) {
+        var diff = Math.max(0, ms - Date.now());
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        return h > 0 ? 'in ' + h + 'h ' + m + 'm' : 'in ' + m + 'm';
+    }
+
+    if (futureSlots.length) {
+        var allMaps = [];
+        futureSlots.forEach(function (slot) {
+            slot.events.forEach(function (e) {
+                if (allMaps.indexOf(e.map) === -1) allMaps.push(e.map);
+            });
+        });
+        allMaps.sort();
+
+        var activeMap = null;
+        var activeEvent = null;
+        var filtersEl = document.getElementById('arc-upcoming-filters');
+
+        var allEventNames = [];
+        futureSlots.forEach(function (slot) {
+            slot.events.forEach(function (e) {
+                if (allEventNames.indexOf(e.name) === -1) allEventNames.push(e.name);
+            });
+        });
+        allEventNames.sort();
+
+        function renderUpcoming() {
+            upcomingEl.innerHTML = futureSlots.map(function (slot) {
+                var events = slot.events.filter(function (e) {
+                    return (!activeMap || e.map === activeMap) && (!activeEvent || e.name === activeEvent);
+                });
+                if (!events.length) return '';
+                return '<div class="arc-upcoming-slot">'
+                    + '<div class="arc-upcoming-time">'
+                    + formatTime(slot.startTime) + ' – ' + formatTime(slot.endTime)
+                    + '<span class="arc-upcoming-in" data-start="' + slot.startTime + '">' + formatIn(slot.startTime) + '</span>'
+                    + '</div>'
+                    + '<div class="arc-map-grid arc-map-grid--upcoming">' + renderMapGrid(events) + '</div>'
+                    + '</div>';
+            }).join('');
+        }
+
+        function compatibleMaps() {
+            return allMaps.filter(function (map) {
+                return futureSlots.some(function (slot) {
+                    return slot.events.some(function (e) {
+                        return e.map === map && (!activeEvent || e.name === activeEvent);
+                    });
+                });
+            });
+        }
+
+        function compatibleEvents() {
+            return allEventNames.filter(function (name) {
+                return futureSlots.some(function (slot) {
+                    return slot.events.some(function (e) {
+                        return e.name === name && (!activeMap || e.map === activeMap);
+                    });
+                });
+            });
+        }
+
+        function updateFilterVisibility() {
+            var okMaps = compatibleMaps();
+            var okEvents = compatibleEvents();
+            document.querySelectorAll('#arc-filter-maps .arc-filter-btn').forEach(function (b) {
+                b.style.display = okMaps.indexOf(b.dataset.val) !== -1 ? '' : 'none';
+            });
+            document.querySelectorAll('#arc-filter-events .arc-filter-btn').forEach(function (b) {
+                b.style.display = okEvents.indexOf(b.dataset.val) !== -1 ? '' : 'none';
+            });
+        }
+
+        function makeFilters(containerId, items, cls, getActive, setActive) {
+            var row = document.getElementById(containerId);
+            row.innerHTML = items.map(function (val) {
+                return '<button class="arc-filter-btn ' + cls + '" data-val="' + val + '">' + val + '</button>';
+            }).join('');
+            row.querySelectorAll('.arc-filter-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var val = btn.dataset.val;
+                    setActive(getActive() === val ? null : val);
+                    row.querySelectorAll('.arc-filter-btn').forEach(function (b) {
+                        b.classList.toggle('arc-filter-btn--active', b.dataset.val === getActive());
+                    });
+                    updateFilterVisibility();
+                    renderUpcoming();
+                });
+            });
+        }
+
+        makeFilters('arc-filter-maps', allMaps, 'arc-filter-btn--map', function () { return activeMap; }, function (v) { activeMap = v; });
+        makeFilters('arc-filter-events', allEventNames, 'arc-filter-btn--event', function () { return activeEvent; }, function (v) { activeEvent = v; });
+        updateFilterVisibility();
+        filtersEl.style.display = 'flex';
+
+        renderUpcoming();
+        upcomingEl.style.display = 'block';
+
+        setInterval(function () {
+            document.querySelectorAll('.arc-upcoming-in').forEach(function (el) {
+                el.textContent = formatIn(parseInt(el.dataset.start));
+            });
+        }, 60000);
     }
 
     document.querySelectorAll('.arc-bp-item').forEach(function (el) {
