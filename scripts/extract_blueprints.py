@@ -1,6 +1,5 @@
 """
-Fetches the ARC Raiders wiki blueprints table and merges location data
-into _data/arc_raiders.json.
+Fetches the ARC Raiders wiki blueprints table and writes _data/arc_raiders.json.
 
 Usage: python scripts/extract_blueprints.py
 """
@@ -23,13 +22,11 @@ class TableParser(HTMLParser):
         self.rows = []
         self._current_row = []
         self._current_cell = []
-        self._depth = 0
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if tag == "table" and "wikitable" in attrs.get("class", ""):
+        if tag == "table" and "wikitable" in (attrs.get("class") or ""):
             self.in_table = True
-            self._depth = 0
         if self.in_table:
             if tag == "tr":
                 self.in_row = True
@@ -83,66 +80,64 @@ def parse_table(html):
                     return row[i]
         return ""
 
+    def split_field(raw):
+        return [v.strip() for v in raw.split(",") if v.strip()] if raw else []
+
     result = {}
     for row in data_rows:
         name = idx(row, "blueprint")
         if not name:
             continue
-        def split_field(raw):
-            return [v.strip() for v in raw.split(",") if v.strip()] if raw else []
-
         result[name] = {
-            "map": split_field(idx(row, "map [ 2 ]", "map")),
-            "condition": split_field(idx(row, "map condition", "condition")),
-            "containers": split_field(idx(row, "containers [ 2 ]", "containers", "source")),
+            "map":          split_field(idx(row, "map [ 2 ]", "map")),
+            "condition":    split_field(idx(row, "map condition", "condition")),
+            "scavengable":  idx(row, "scavengable"),
+            "containers":   split_field(idx(row, "containers [ 2 ]", "containers", "source")),
+            "quest_reward": idx(row, "quest reward"),
+            "trials_reward": idx(row, "trials reward"),
         }
 
     return result
 
 
 def normalize(s):
-    """Lowercase + collapse whitespace for fuzzy matching."""
     return " ".join(s.lower().split())
 
 
 def main():
     print("Fetching wiki...")
-    html = fetch_wiki()
-
-    print("Parsing table...")
-    wiki = parse_table(html)
+    wiki = parse_table(fetch_wiki())
     print(f"  Found {len(wiki)} wiki entries")
 
-    with open(DATA_FILE) as f:
-        data = json.load(f)
+    with open(DATA_FILE, encoding="utf-8") as f:
+        existing = json.load(f)
 
     wiki_norm = {normalize(k): v for k, v in wiki.items()}
 
     matched = 0
     unmatched = []
+    blueprints = []
 
-    for bp in data["blueprints"]:
+    for bp in existing["blueprints"]:
         key = normalize(bp["name"])
-        # Try exact normalized match first
         loc = wiki_norm.get(key)
-        # Fallback: "mag" ↔ "magazine"
         if not loc:
-            alt = key.replace(" mag ", " magazine ").replace(" mag$", " magazine")
+            alt = key.replace(" mag ", " magazine ")
             loc = wiki_norm.get(alt) or wiki_norm.get(alt.replace("magazine", "mag"))
+        entry = {"name": bp["name"], "img": bp["img"]}
         if loc:
-            bp["map"] = loc["map"]
-            bp["condition"] = loc["condition"]
-            bp["containers"] = loc["containers"]
+            entry.update(loc)
             matched += 1
         else:
             unmatched.append(bp["name"])
+        blueprints.append(entry)
 
-    with open(DATA_FILE, "w") as f:
-        json.dump(data, f, indent=2)
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump({"blueprints": blueprints}, f, indent=2)
 
-    print(f"\nMatched: {matched}/{len(data['blueprints'])}")
+    print(f"\nMatched: {matched}/{len(existing['blueprints'])}")
     if unmatched:
-        print(f"Unmatched ({len(unmatched)}) — no location data added for these:")
+        print(f"Unmatched ({len(unmatched)}) — no location data for these:")
         for name in unmatched:
             print(f"  - {name}")
     else:

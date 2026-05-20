@@ -11,9 +11,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Angled Grip III",
@@ -26,9 +29,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Pulse Mine",
@@ -39,9 +45,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Silencer II",
@@ -52,9 +61,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Red Light Stick",
@@ -65,9 +77,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Tactical Mk. 3 (Revival)",
@@ -79,10 +94,13 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "Security Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Compensator II",
@@ -93,9 +111,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Muzzle Brake III",
@@ -108,9 +129,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Tactical Mk. 3 (Defensive)",
@@ -122,11 +146,14 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "Security Containers",
         "ARC Surveyor"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Vita Spray",
@@ -137,10 +164,13 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "ARC Surveyor"
-      ]
+      ],
+      "quest_reward": "Yes, Worth Your Salt",
+      "trials_reward": "Yes"
     },
     {
       "name": "Medium Gun Parts",
@@ -151,9 +181,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Tagging Grenade",
@@ -164,13 +197,28 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Electrical Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Crash Mat",
-      "img": "7/75/Crash_Mat.png"
+      "img": "7/75/Crash_Mat.png",
+      "map": [
+        "?"
+      ],
+      "condition": [
+        "?"
+      ],
+      "scavengable": "?",
+      "containers": [
+        "?"
+      ],
+      "quest_reward": "?",
+      "trials_reward": "?"
     },
     {
       "name": "Bobcat",
@@ -181,10 +229,13 @@
       "condition": [
         "Locked Gate Hurricane"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere",
         "First Wave Cache"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Defibrillator",
@@ -195,9 +246,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Jupiter",
@@ -208,9 +262,12 @@
       "condition": [
         "Harvester"
       ],
+      "scavengable": "No",
       "containers": [
         "Harvester"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "No"
     },
     {
       "name": "Extended Medium Mag II",
@@ -221,13 +278,28 @@
       "condition": [
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Tactical Mk. 3 (Smoke)",
-      "img": "d/d6/Tactical_Mk._3_%28Smoke%29.png"
+      "img": "d/d6/Tactical_Mk._3_%28Smoke%29.png",
+      "map": [
+        "?"
+      ],
+      "condition": [
+        "?"
+      ],
+      "scavengable": "?",
+      "containers": [
+        "?"
+      ],
+      "quest_reward": "?",
+      "trials_reward": "?"
     },
     {
       "name": "Smoke Grenade",
@@ -238,9 +310,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Any"
     },
     {
       "name": "Dolabra",
@@ -251,9 +326,12 @@
       "condition": [
         "Close Scrutiny"
       ],
+      "scavengable": "Yes",
       "containers": [
         "ARC Assessor"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "No"
     },
     {
       "name": "Shotgun Silencer",
@@ -267,13 +345,28 @@
         "Night Raid",
         "Hidden Bunker"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "White Flag",
-      "img": "4/43/White_Flag.png"
+      "img": "4/43/White_Flag.png",
+      "map": [
+        "?"
+      ],
+      "condition": [
+        "?"
+      ],
+      "scavengable": "?",
+      "containers": [
+        "?"
+      ],
+      "quest_reward": "?",
+      "trials_reward": "?"
     },
     {
       "name": "Extended Light Mag II",
@@ -284,9 +377,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Showstopper",
@@ -297,9 +393,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Industrial Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Remote Raider Flare",
@@ -310,9 +409,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Electrical Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Angled Grip II",
@@ -323,9 +425,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Stable Stock III",
@@ -338,9 +443,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Aphelion",
@@ -351,9 +459,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "No"
     },
     {
       "name": "Tempest",
@@ -364,10 +475,13 @@
       "condition": [
         "Night Raid Hurricane"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers",
         "First Wave Cache"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Tactical Mk. 3 (Healing)",
@@ -379,10 +493,13 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "Security Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Vertical Grip III",
@@ -395,9 +512,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Wolfpack",
@@ -408,9 +528,12 @@
       "condition": [
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Combat Mk. 3 (Flanking)",
@@ -422,10 +545,13 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "Security Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Torrente",
@@ -436,9 +562,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Jolt Mine",
@@ -449,9 +578,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Industrial Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Hullcracker",
@@ -462,9 +594,12 @@
       "condition": [
         "N/A"
       ],
+      "scavengable": "No",
       "containers": [
         "N/A"
-      ]
+      ],
+      "quest_reward": "Yes, The Major's Footlocker",
+      "trials_reward": "No"
     },
     {
       "name": "Vita Shot",
@@ -475,10 +610,13 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "ARC Surveyor"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Deadline",
@@ -489,9 +627,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Shotgun Choke II",
@@ -502,9 +643,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Anvil",
@@ -515,9 +659,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Osprey",
@@ -528,9 +675,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Looting Mk. 3 (Survivor)",
@@ -541,10 +691,13 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "Security Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Extended Shotgun Mag II",
@@ -555,13 +708,28 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Powered Descender",
-      "img": "2/21/Powered_Descender.png"
+      "img": "2/21/Powered_Descender.png",
+      "map": [
+        "?"
+      ],
+      "condition": [
+        "?"
+      ],
+      "scavengable": "?",
+      "containers": [
+        "?"
+      ],
+      "quest_reward": "?",
+      "trials_reward": "?"
     },
     {
       "name": "Compensator III",
@@ -574,9 +742,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Vulcano",
@@ -587,10 +758,13 @@
       "condition": [
         "Hidden Bunker Hurricane"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere",
         "First Wave Cache"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Lightweight Stock",
@@ -603,9 +777,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Trailblazer",
@@ -616,9 +793,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Barricade Kit",
@@ -629,9 +809,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Electrical Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Green Light Stick",
@@ -642,9 +825,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Extended Medium Mag III",
@@ -657,9 +843,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Lure Grenade",
@@ -670,9 +859,12 @@
       "condition": [
         "N/A"
       ],
+      "scavengable": "No",
       "containers": [
         "N/A"
-      ]
+      ],
+      "quest_reward": "Yes, Greasing Her Palms",
+      "trials_reward": "No"
     },
     {
       "name": "Combat Mk. 3 (Aggressive)",
@@ -684,10 +876,13 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "Security Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Light Gun Parts",
@@ -698,9 +893,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Extended Light Mag III",
@@ -713,9 +911,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Il Toro",
@@ -726,9 +927,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Padded Stock",
@@ -742,9 +946,12 @@
         "Night Raid",
         "Hidden Bunker"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Heavy Gun Parts",
@@ -755,9 +962,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Rascal",
@@ -768,9 +978,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "?"
     },
     {
       "name": "Canto",
@@ -781,9 +994,12 @@
       "condition": [
         "Hurricane"
       ],
+      "scavengable": "Yes",
       "containers": [
         "First Wave Cache"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Bettina",
@@ -794,9 +1010,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Fireworks Box",
@@ -807,9 +1026,12 @@
       "condition": [
         "Cold Snap"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "Yes, Test Case",
+      "trials_reward": "?"
     },
     {
       "name": "Gas Mine",
@@ -820,9 +1042,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "?"
     },
     {
       "name": "Yellow Light Stick",
@@ -833,9 +1058,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Looting Mk. 3 (Safekeeper)",
@@ -846,10 +1074,13 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Medical Containers",
         "Security Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Surge Coil",
@@ -860,9 +1091,12 @@
       "condition": [
         "Electromagnetic Storm"
       ],
+      "scavengable": "Yes",
       "containers": [
         "?"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "?"
     },
     {
       "name": "Complex Gun Parts",
@@ -873,9 +1107,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Security Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "No"
     },
     {
       "name": "Explosive Mine",
@@ -886,9 +1123,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Industrial Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Venator",
@@ -899,9 +1139,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Raider Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Stable Stock II",
@@ -912,9 +1155,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Blaze Grenade",
@@ -925,9 +1171,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Industrial Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Trigger 'Nade",
@@ -938,9 +1187,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "Yes, Sparks Fly",
+      "trials_reward": "?"
     },
     {
       "name": "Seeker Grenade",
@@ -951,9 +1203,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "?"
     },
     {
       "name": "Silencer I",
@@ -964,9 +1219,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Shotgun Choke III",
@@ -979,9 +1237,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Blue Light Stick",
@@ -992,9 +1253,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Vertical Grip II",
@@ -1005,9 +1269,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Extended Barrel II",
@@ -1018,9 +1285,12 @@
       "condition": [
         "?"
       ],
+      "scavengable": "?",
       "containers": [
         "?"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Muzzle Brake II",
@@ -1031,9 +1301,12 @@
       "condition": [
         "Any"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Extended Barrel III",
@@ -1046,9 +1319,12 @@
         "Locked Gate",
         "Night Raid"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Residential Containers"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Yes"
     },
     {
       "name": "Burletta",
@@ -1059,9 +1335,12 @@
       "condition": [
         "N/A"
       ],
+      "scavengable": "No",
       "containers": [
         "N/A"
-      ]
+      ],
+      "quest_reward": "Yes, Industrial Espionage",
+      "trials_reward": "Yes"
     },
     {
       "name": "Equalizer",
@@ -1072,9 +1351,12 @@
       "condition": [
         "Harvester"
       ],
+      "scavengable": "No",
       "containers": [
         "Harvester"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "No"
     },
     {
       "name": "Snap Hook",
@@ -1085,9 +1367,12 @@
       "condition": [
         "Electromagnetic Storm"
       ],
+      "scavengable": "Yes",
       "containers": [
         "Anywhere"
-      ]
+      ],
+      "quest_reward": "No",
+      "trials_reward": "Trophy Only"
     }
   ]
 }
