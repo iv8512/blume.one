@@ -116,19 +116,15 @@
             if (el.dataset.map) rows.push(['Map', el.dataset.map.split('|')]);
             if (el.dataset.condition) rows.push(['Condition', el.dataset.condition.split('|')]);
             if (el.dataset.containers) rows.push(['Found in', el.dataset.containers.split('|')]);
+            if (el.dataset.scavengable) rows.push(['Scavengable', el.dataset.scavengable]);
+            if (el.dataset.questReward) rows.push(['Quest Reward', el.dataset.questReward]);
+            if (el.dataset.trialsReward) rows.push(['Trials Reward', el.dataset.trialsReward]);
             meta.innerHTML = rows.map(function (r) {
                 var vals = Array.isArray(r[1]) ? r[1] : [r[1]];
                 return '<div class="arc-info-row"><span class="arc-info-label">' + r[0] + '</span>'
                     + vals.map(function (v) { return '<span class="arc-info-value">' + v + '</span>'; }).join('')
                     + '</div>';
-            }).join('')
-            + '<div class="arc-info-badges">'
-            + [['Scavengable', el.dataset.scavengable], ['Quest', el.dataset.questReward], ['Trial', el.dataset.trialsReward]].map(function (b) {
-                var val = (b[1] || '').trim();
-                var cls = val === 'Yes' ? 'arc-badge--yes' : val === 'No' ? 'arc-badge--no' : 'arc-badge--unknown';
-                return '<span class="arc-badge ' + cls + '">' + b[0] + '</span>';
-            }).join('')
-            + '</div>';
+            }).join('');
         });
     });
 })();

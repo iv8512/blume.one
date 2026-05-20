@@ -199,45 +199,6 @@
     line-height: 1.5;
 }
 
-.arc-info-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 4px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-.arc-badge {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-}
-
-.arc-badge--yes {
-    color: #a8d890;
-    background: rgba(120,200,100,0.1);
-    border-color: rgba(120,200,100,0.25);
-}
-
-.arc-badge--no {
-    color: var(--muted);
-    background: rgba(255,255,255,0.04);
-    border-color: rgba(255,255,255,0.08);
-    opacity: 0.5;
-}
-
-.arc-badge--unknown {
-    color: var(--muted);
-    background: rgba(255,255,255,0.04);
-    border-color: rgba(255,255,255,0.08);
-    opacity: 0.4;
-    font-style: italic;
-}
 
 .arc-bp-item--active {
     border-color: rgba(120,200,100,0.5) !important;
