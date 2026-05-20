@@ -1,11 +1,135 @@
 {% assign arc = site.data.links.games | where: "id", "arc-raiders" | first %}
+<script>var SCHEDULE = {{ site.data['events-schedule'] | jsonify }};</script>
 <section class="second-page" id="arc-raiders">
-    <div class="second-page-content">
-        <h2 class="section-title">ARC Raiders</h2>
-        <ol>
-            {% for link in arc.links %}
-            <li><a href="{{ link.url }}">{{ link.name }}</a></li>
-            {% endfor %}
-        </ol>
+    <div class="second-page-content second-page-content--wide">
+        <div class="arc-content">
+
+            <div class="arc-main-row">
+
+                <div class="arc-events-section">
+                    <h2 class="section-title">ARC Raiders</h2>
+                    <div class="arc-links">
+                        {% for link in arc.links %}
+                        <a class="arc-link-pill" href="{{ link.url }}" target="_blank" rel="noopener">
+                            {% include favicon.html url=link.url %}
+                            {{ link.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <div class="arc-events-bar">
+                        <span class="arc-events-label">Event Schedule</span>
+                        <span class="arc-rotation-label">Ends in <span id="arc-countdown" class="arc-countdown">--:--</span></span>
+                    </div>
+                    <div id="arc-events-msg" class="arc-events-msg">Loading...</div>
+                    <div id="arc-map-grid" class="arc-map-grid" style="display:none"></div>
+                </div>
+
+                <div class="arc-bp-section">
+                    <div class="arc-section-label">Blueprints</div>
+                    <div class="arc-bp-grid">
+                        {% for bp in site.data.arc_raiders.blueprints %}
+                        <div class="arc-bp-item" data-name="{{ bp.name }}" data-img="https://arcraiders.wiki/w/images/{{ bp.img }}" data-map="{{ bp.map | join: '|' }}" data-condition="{{ bp.condition | join: '|' }}" data-containers="{{ bp.containers | join: '|' }}" data-scavengable="{{ bp.scavengable }}" data-quest-reward="{{ bp.quest_reward }}" data-trials-reward="{{ bp.trials_reward }}">
+                            <img src="https://arcraiders.wiki/w/images/{{ bp.img }}" alt="{{ bp.name }}" loading="lazy">
+                            <span>{{ bp.name }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="arc-info-panel" id="arc-info-panel">
+                    <div class="arc-section-label">Blueprint</div>
+                    <div class="arc-info-empty" id="arc-info-empty">Select a blueprint</div>
+                    <div class="arc-info-content" id="arc-info-content" style="display:none">
+                        <img id="arc-info-img" src="" alt="">
+                        <div class="arc-info-name" id="arc-info-name"></div>
+                        <div class="arc-info-meta" id="arc-info-meta"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 </section>
+
+<script>
+(function () {
+    var schedule = (SCHEDULE && SCHEDULE.data) || [];
+    var now = Date.now();
+
+    var current = schedule.filter(function (e) {
+        return e.startTime <= now && now < e.endTime;
+    });
+
+    var msgEl = document.getElementById('arc-events-msg');
+    var gridEl = document.getElementById('arc-map-grid');
+
+    if (!current.length) {
+        msgEl.textContent = 'No events found for this time slot.';
+    } else {
+        var endTime = current[0].endTime;
+
+        function pad(n) { return n < 10 ? '0' + n : '' + n; }
+        function tick() {
+            var diff = Math.max(0, endTime - Date.now());
+            var m = Math.floor(diff / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('arc-countdown').textContent = m + ':' + pad(s);
+        }
+        setInterval(tick, 1000);
+        tick();
+
+        var byMap = {};
+        current.forEach(function (e) {
+            if (!byMap[e.map]) byMap[e.map] = [];
+            byMap[e.map].push(e);
+        });
+
+        gridEl.innerHTML = Object.keys(byMap).sort().map(function (mapName) {
+            var items = byMap[mapName].map(function (e) {
+                return '<div class="arc-event-item">'
+                    + '<img class="arc-event-icon" src="' + e.icon + '" alt="" loading="lazy">'
+                    + '<span class="arc-event-name">' + e.name + '</span>'
+                    + '</div>';
+            }).join('');
+            return '<div class="arc-map-card">'
+                + '<div class="arc-map-name">' + mapName + '</div>'
+                + '<div class="arc-event-list">' + items + '</div>'
+                + '</div>';
+        }).join('');
+
+        msgEl.style.display = 'none';
+        gridEl.style.display = 'grid';
+    }
+
+    document.querySelectorAll('.arc-bp-item').forEach(function (el) {
+        el.addEventListener('click', function () {
+            document.querySelectorAll('.arc-bp-item').forEach(function (i) { i.classList.remove('arc-bp-item--active'); });
+            el.classList.add('arc-bp-item--active');
+            document.getElementById('arc-info-empty').style.display = 'none';
+            var content = document.getElementById('arc-info-content');
+            content.style.display = 'flex';
+            document.getElementById('arc-info-img').src = el.dataset.img;
+            document.getElementById('arc-info-name').textContent = el.dataset.name;
+            var meta = document.getElementById('arc-info-meta');
+            var rows = [];
+            if (el.dataset.map) rows.push(['Map', el.dataset.map.split('|')]);
+            if (el.dataset.condition) rows.push(['Condition', el.dataset.condition.split('|')]);
+            if (el.dataset.containers) rows.push(['Found in', el.dataset.containers.split('|')]);
+            meta.innerHTML = rows.map(function (r) {
+                var vals = Array.isArray(r[1]) ? r[1] : [r[1]];
+                return '<div class="arc-info-row"><span class="arc-info-label">' + r[0] + '</span>'
+                    + vals.map(function (v) { return '<span class="arc-info-value">' + v + '</span>'; }).join('')
+                    + '</div>';
+            }).join('')
+            + '<div class="arc-info-badges">'
+            + [['Scavengable', el.dataset.scavengable], ['Quest', el.dataset.questReward], ['Trial', el.dataset.trialsReward]].map(function (b) {
+                var val = (b[1] || '').trim();
+                var cls = val === 'Yes' ? 'arc-badge--yes' : val === 'No' ? 'arc-badge--no' : 'arc-badge--unknown';
+                return '<span class="arc-badge ' + cls + '">' + b[0] + '</span>';
+            }).join('')
+            + '</div>';
+        });
+    });
+})();
+</script>
