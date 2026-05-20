@@ -11,18 +11,18 @@
         { "before": "steamcommunity", "diff": ".rip", "after": "",                 "to_name": "csst.at",     "to_url": "https://csst.at/" }
       ],
       "links": [
-        { "name": "Faceit",            "url": "https://www.faceit.com/",       "group": "Platform",        "domain": "faceit.com" },
-        { "name": "Faceit Analyser",   "url": "https://faceitanalyser.com/",   "group": "Platform",        "domain": "faceitanalyser.com" },
-        { "name": "Faceit Finder",     "url": "https://faceitfinder.com/",     "group": "Platform",        "domain": "faceitfinder.com" },
-        { "name": "CSStats",           "url": "https://csstats.gg/",           "group": "Stats & Analysis","domain": "csstats.gg" },
-        { "name": "Leetify",           "url": "https://leetify.com/app",       "group": "Stats & Analysis","domain": "leetify.com" },
-        { "name": "Refrag",            "url": "https://play.refrag.gg/",       "group": "Practice",        "domain": "refrag.gg" },
-        { "name": "xplay",             "url": "https://xplay.gg/",             "group": "Practice",        "domain": "xplay.gg" },
-        { "name": "CSNades",           "url": "https://csnades.gg/",           "group": "Practice",        "domain": "csnades.gg" },
-        { "name": "CS2 Callouts",      "url": "https://cs2callouts.com/",      "group": "Practice",        "domain": "cs2callouts.com" },
-        { "name": "CSSkins",           "url": "https://csgoskins.gg/",         "group": "Skins",           "domain": "csgoskins.gg" },
-        { "name": "CSFloat",           "url": "https://csfloat.com/",          "group": "Skins",           "domain": "csfloat.com" },
-        { "name": "CS2 Inspects",      "url": "https://cs2inspects.com/",      "group": "Skins",           "domain": "cs2inspects.com" }
+        { "name": "Faceit",            "url": "https://www.faceit.com/",       "group": "Platform"         },
+        { "name": "Faceit Analyser",   "url": "https://faceitanalyser.com/",   "group": "Platform"         },
+        { "name": "Faceit Finder",     "url": "https://faceitfinder.com/",     "group": "Platform"         },
+        { "name": "CSStats",           "url": "https://csstats.gg/",           "group": "Stats & Analysis" },
+        { "name": "Leetify",           "url": "https://leetify.com/app",       "group": "Stats & Analysis" },
+        { "name": "Refrag",            "url": "https://play.refrag.gg/",       "group": "Practice"         },
+        { "name": "xplay",             "url": "https://xplay.gg/",             "group": "Practice"         },
+        { "name": "CSNades",           "url": "https://csnades.gg/",           "group": "Practice"         },
+        { "name": "CS2 Callouts",      "url": "https://cs2callouts.com/",      "group": "Practice"         },
+        { "name": "CSSkins",           "url": "https://csgoskins.gg/",         "group": "Skins"            },
+        { "name": "CSFloat",           "url": "https://csfloat.com/",          "group": "Skins"            },
+        { "name": "CS2 Inspects",      "url": "https://cs2inspects.com/",      "group": "Skins"            }
       ]
     },
     {

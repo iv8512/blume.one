@@ -14,7 +14,7 @@
                             <div class="cs2-link-group-label">{{ group.name }}</div>
                             <div class="cs2-pills">
                                 {% for link in group.items %}
-                                <a href="{{ link.url }}" class="cs2-pill"><img class="cs2-pill-icon" src="https://icons.duckduckgo.com/ip3/{{ link.domain }}.ico" alt="">{{ link.name }}</a>
+                                <a href="{{ link.url }}" class="cs2-pill">{% include favicon.html url=link.url %}{{ link.name }}</a>
                                 {% endfor %}
                             </div>
                         </div>
