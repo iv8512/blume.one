@@ -109,14 +109,21 @@
 
 /* ── blueprints ──────────────────────────────────────── */
 
+.arc-bp-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+}
+
 .arc-bp-grid {
+    flex: 1;
+    min-height: 0;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
     gap: 6px;
 }
 
 .arc-bp-item {
-    aspect-ratio: 1;
     position: relative;
     display: flex;
     align-items: center;
@@ -548,11 +555,12 @@
 
 @media (max-width: 900px) {
     .arc-main-row { grid-template-columns: 1fr; }
-    .arc-bp-grid { grid-template-columns: repeat(6, 1fr); }
+    .arc-bp-section { align-self: auto; }
+    .arc-bp-grid { grid-template-columns: repeat(auto-fit, minmax(64px, 1fr)); }
+    .arc-bp-item { aspect-ratio: 1; }
     .arc-map-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 540px) {
-    .arc-bp-grid { grid-template-columns: repeat(4, 1fr); }
     .arc-map-grid { grid-template-columns: 1fr; }
 }
