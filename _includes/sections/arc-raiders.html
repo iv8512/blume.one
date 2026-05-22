@@ -32,7 +32,9 @@
                             <div id="arc-filter-events" class="arc-filter-row"></div>
                         </div>
                     </div>
-                    <div id="arc-upcoming" class="arc-upcoming" style="display:none"></div>
+                    <div id="arc-upcoming-scroll" class="arc-upcoming-scroll">
+                        <div id="arc-upcoming" class="arc-upcoming" style="display:none"></div>
+                    </div>
                 </div>
 
                 <div class="arc-bp-section">
@@ -213,6 +215,12 @@
             row.innerHTML = items.map(function (val) {
                 return '<button class="arc-filter-btn ' + cls + '" data-val="' + val + '">' + val + '</button>';
             }).join('');
+            row.addEventListener('wheel', function (e) {
+                if (e.deltaY !== 0) {
+                    e.preventDefault();
+                    row.scrollBy({ left: e.deltaY * 1.5, behavior: 'smooth' });
+                }
+            }, { passive: false });
             row.querySelectorAll('.arc-filter-btn').forEach(function (btn) {
                 btn.addEventListener('click', function () {
                     var val = btn.dataset.val;
