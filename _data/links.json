@@ -55,5 +55,9 @@
     { "name": "Steam",            "url": "https://store.steampowered.com/" },
     { "name": "SteamDB",          "url": "https://steamdb.info/" },
     { "name": "Extensions",       "url": "chrome://extensions/" }
+  ],
+  "deadlock": [
+    { "name": "Deadlock Wiki", "url": "https://deadlock.wiki/" },
+    { "name": "Tracklock",     "url": "https://tracklock.gg/" }
   ]
 }

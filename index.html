@@ -14,13 +14,23 @@ title: Link Collection
             </ol>
         </div>
         {% endfor %}
-        <div class="card card-span-2">
-            <h1>Other</h1>
-            <ol>
-                {% for link in site.data.links.other %}
-                <li><a href="{{ link.url }}">{{ link.name }}</a></li>
-                {% endfor %}
-            </ol>
+        <div class="card-column">
+            <div class="card">
+                <h1>Other</h1>
+                <ol>
+                    {% for link in site.data.links.other %}
+                    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="card">
+                <h1>Deadlock</h1>
+                <ol>
+                    {% for link in site.data.links.deadlock %}
+                    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
         </div>
     </div>
     <div class="google-search-wrapper">
