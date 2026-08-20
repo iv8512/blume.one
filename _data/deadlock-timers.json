@@ -1,0 +1,25 @@
+{
+  "objectives": [
+    { "icon": "midboss",   "name": "Mid Boss",           "first_spawn": "0:00",       "respawn": "7:00 → 6:00 (2nd) → 5:00 (3rd+)", "detail": "Alive in the pit from the start; killing it drops a Rejuvenator." },
+    { "icon": "trooper",   "name": "Troopers",           "first_spawn": "0:00",       "respawn": "0:30 → 0:25 (20:00) → 0:20 (35:00)", "detail": "Spawn rate increases at 20:00 and 35:00; +50% max HP after 35:00." },
+    { "icon": "camp1",     "name": "Tier 1 camp",        "first_spawn": "2:00",       "respawn": "1:25",   "detail": "Easy neutral camps across the jungle." },
+    { "icon": "statue",    "name": "Golden Statue",      "first_spawn": "3:00",       "respawn": "3:00",   "detail": "Tier 1 buffs at spawn; upgrades to Tier 2 at 10:00, Tier 3 at 30:00." },
+    { "icon": "camp2",     "name": "Tier 2 camp",        "first_spawn": "5:00",       "respawn": "4:50",   "detail": "Medium neutral camps." },
+    { "icon": "powerup",   "name": "Powerup",            "first_spawn": "5:00",       "respawn": "5:00",   "detail": "2 pickups on the map." },
+    { "icon": "camp3",     "name": "Tier 3 camp",        "first_spawn": "8:00",       "respawn": "5:35",   "detail": "Hard neutral camps." },
+    { "icon": "sacrifice", "name": "Sinner's Sacrifice", "first_spawn": "8:00",       "respawn": "5:00",   "detail": "Sacrifice machines appear." },
+    { "icon": "urn",       "name": "Soul Urn",           "first_spawn": "10:00",      "respawn": "5:00",   "detail": "Descends and lands ~12s after spawning." },
+    { "icon": "rift",      "name": "Unstable Rift",      "first_spawn": "11:00 ±1:00", "respawn": "~7:00 ±1:00", "detail": "Opens into a capture point 20s after appearing." },
+    { "icon": "guardian",  "name": "Guardians",          "first_spawn": "12:00",      "respawn": "—",      "detail": "Reach max damage resistance reduction (-50%)." },
+    { "icon": "walker",    "name": "Walkers",            "first_spawn": "18:00",      "respawn": "—",      "detail": "Reach max damage resistance reduction (-65%)." }
+  ],
+  "boxes": {
+    "drop_chance": "60%",
+    "base_value": 23,
+    "growth_per_minute": 2,
+    "first_spawn_time": "3:00",
+    "first_spawn_value": 29
+  },
+  "source_name": "Deadlock Wiki",
+  "source_url": "https://deadlock.wiki/The_Cursed_Apple"
+}
