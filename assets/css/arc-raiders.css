@@ -1,24 +1,26 @@
-/* ── variables ───────────────────────────────────────── */
+/* ── variables (pulled from arcraiders.com's own CSS) ── */
 
 #arc-raiders {
-    --arc-green: #7db87d;
-    --arc-green-light: #a8d890;
-    --arc-green-a08: rgba(120, 200, 100, 0.08);
-    --arc-green-a10: rgba(120, 200, 100, 0.1);
-    --arc-green-a25: rgba(120, 200, 100, 0.25);
-    --arc-green-a30: rgba(120, 200, 100, 0.3);
-    --arc-green-a35: rgba(120, 200, 100, 0.35);
-    --arc-green-a50: rgba(120, 200, 100, 0.5);
+    --arc-ink: #130918;
+    --arc-ink-deep: #0b0510;
+    --arc-panel: #1d1424;
+    --arc-panel-line: rgba(236, 226, 208, 0.10);
+    --arc-cream: #ece2d0;
+    --arc-cream-dim: rgba(236, 226, 208, 0.55);
+    --arc-cream-faint: rgba(236, 226, 208, 0.30);
+    --arc-amber: #f1aa1c;
+    --arc-amber-bright: #ffbc13;
+    --arc-amber-dim: rgba(241, 170, 28, 0.14);
+    --arc-amber-border: rgba(241, 170, 28, 0.30);
+    --arc-teal: #51a5b7;
+    --arc-teal-dim: rgba(81, 165, 183, 0.14);
+    --arc-teal-border: rgba(81, 165, 183, 0.30);
 }
 
 /* ── section ─────────────────────────────────────────── */
 
 #arc-raiders.second-page {
-    background: linear-gradient(180deg, #0e1a14 0%, #111a20 100%);
-}
-
-#arc-raiders h2 {
-    margin-bottom: 8px;
+    background: radial-gradient(120% 90% at 50% -10%, #221530 0%, var(--arc-ink) 45%, var(--arc-ink-deep) 100%);
 }
 
 #arc-raiders .second-page-content {
@@ -35,6 +37,36 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    font-family: 'Barlow', system-ui, sans-serif;
+}
+
+/* ── title ───────────────────────────────────────────── */
+
+#arc-raiders .arc-title.section-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0 0 12px;
+    line-height: 1;
+}
+
+#arc-raiders .arc-title.section-title svg {
+    height: 24px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+#arc-raiders .arc-title.section-title span {
+    font-family: 'Barlow Semi Condensed', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+    color: var(--arc-cream);
+}
+
+#arc-raiders .arc-title.section-title:hover span {
+    color: var(--arc-amber);
 }
 
 /* ── links ───────────────────────────────────────────── */
@@ -52,9 +84,9 @@
     padding: 4px 13px;
     border-radius: 20px;
     font-size: 0.85rem;
-    color: var(--text);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--arc-cream-dim);
+    background: rgba(236, 226, 208, 0.04);
+    border: 1px solid var(--arc-panel-line);
     text-decoration: none;
     transition: background .13s, border-color .13s, color .13s;
     white-space: nowrap;
@@ -68,9 +100,9 @@
 }
 
 .arc-link-pill:hover {
-    background: var(--arc-green-a10);
-    border-color: var(--arc-green-a30);
-    color: var(--arc-green-light);
+    background: var(--arc-amber-dim);
+    border-color: var(--arc-amber-border);
+    color: var(--arc-amber-bright);
     transform: none;
 }
 
@@ -82,8 +114,8 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--arc-green);
-    opacity: 0.85;
+    color: var(--arc-amber);
+    opacity: 0.9;
 }
 
 .arc-section-label {
@@ -96,13 +128,13 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--arc-green);
+    color: var(--arc-amber);
 }
 
-.arc-map-name { opacity: 0.8; }
+.arc-map-name { opacity: 0.85; }
 
 .arc-filter-label {
-    opacity: 0.85;
+    opacity: 0.9;
     white-space: nowrap;
     min-width: 36px;
 }
@@ -128,8 +160,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.22);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid var(--arc-panel-line);
     border-radius: 6px;
     overflow: hidden;
     transition: border-color .12s;
@@ -137,7 +169,7 @@
 }
 
 .arc-bp-item:hover {
-    border-color: var(--arc-green-a35);
+    border-color: var(--arc-amber-border);
 }
 
 .arc-bp-item:hover span {
@@ -159,10 +191,10 @@
     justify-content: center;
     padding: 6px;
     font-size: 0.75rem;
-    color: var(--text);
+    color: var(--arc-cream);
     text-align: center;
     line-height: 1.3;
-    background: rgba(10,20,12,0.88);
+    background: rgba(11, 5, 16, 0.9);
     opacity: 0;
     transition: opacity .15s;
 }
@@ -180,8 +212,7 @@
 
 .arc-info-empty {
     font-size: 0.82rem;
-    color: var(--muted);
-    opacity: 0.35;
+    color: var(--arc-cream-faint);
     font-style: italic;
     padding: 24px 0;
     text-align: center;
@@ -206,7 +237,7 @@
 .arc-info-name {
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--text);
+    color: var(--arc-cream);
     text-align: center;
     line-height: 1.3;
 }
@@ -218,13 +249,13 @@
     gap: 12px;
     margin-top: 4px;
     padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid var(--arc-panel-line);
 }
 
 .arc-info-row {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
 }
 
 .arc-info-label {
@@ -232,28 +263,42 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--arc-green);
-    opacity: 0.85;
+    color: var(--arc-amber);
+    opacity: 0.9;
 }
 
 .arc-info-value {
     font-size: 0.9rem;
-    color: var(--text);
-    opacity: 0.85;
+    color: var(--arc-cream-dim);
     line-height: 1.5;
 }
 
+.arc-info-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.arc-info-tag {
+    font-size: 0.75rem;
+    padding: 2px 9px;
+    border-radius: 10px;
+    background: var(--arc-teal-dim);
+    border: 1px solid var(--arc-teal-border);
+    color: var(--arc-teal);
+}
+
 .arc-bp-item--active {
-    border-color: var(--arc-green-a50) !important;
-    background: var(--arc-green-a10) !important;
+    border-color: var(--arc-amber-border) !important;
+    background: var(--arc-amber-dim) !important;
 }
 
 /* ── side panels (events + info share card style) ───── */
 
 .arc-events-section,
 .arc-info-panel {
-    background: rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--arc-panel);
+    border: 1px solid var(--arc-panel-line);
     border-radius: 10px;
     padding: 14px 16px;
 }
@@ -283,19 +328,18 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid var(--arc-panel-line);
 }
 
 .arc-rotation-label {
     font-size: 0.75rem;
-    color: var(--muted);
-    opacity: 0.6;
+    color: var(--arc-cream-dim);
 }
 
 .arc-countdown {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--arc-green-light);
+    color: var(--arc-amber-bright);
     font-variant-numeric: tabular-nums;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 0.04em;
@@ -303,8 +347,7 @@
 
 .arc-events-msg {
     font-size: 0.82rem;
-    color: var(--muted);
-    opacity: 0.45;
+    color: var(--arc-cream-faint);
     padding: 6px 0;
 }
 
@@ -317,8 +360,8 @@
 }
 
 .arc-map-card {
-    background: rgba(0,0,0,0.25);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--arc-panel-line);
     border-radius: 10px;
     padding: 12px 14px;
     display: flex;
@@ -344,19 +387,18 @@
     border-radius: 4px;
     flex-shrink: 0;
     object-fit: cover;
-    background: rgba(255,255,255,0.05);
+    background: rgba(236, 226, 208, 0.05);
 }
 
 .arc-event-name {
     font-size: 0.82rem;
-    color: var(--text);
+    color: var(--arc-cream);
     line-height: 1.3;
 }
 
 .arc-event-empty {
     font-size: 0.75rem;
-    color: var(--muted);
-    opacity: 0.3;
+    color: var(--arc-cream-faint);
     font-style: italic;
 }
 
@@ -367,7 +409,7 @@
     flex-direction: column;
     gap: 10px;
     padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid var(--arc-panel-line);
 }
 
 .arc-filter-group {
@@ -393,21 +435,21 @@
     font-weight: 500;
     padding: 4px 8px;
     border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.06);
-    background: rgba(0,0,0,0.22);
-    color: var(--muted);
+    border: 1px solid var(--arc-panel-line);
+    background: rgba(0, 0, 0, 0.22);
+    color: var(--arc-cream-dim);
     cursor: pointer;
     transition: border-color .12s, background .12s, color .12s;
 }
 
 .arc-filter-icon-trigger:hover {
-    border-color: var(--arc-green-a25);
+    border-color: var(--arc-amber-border);
 }
 
 .arc-filter-icon-trigger--active {
-    background: var(--arc-green-a08);
-    border-color: var(--arc-green-a35);
-    color: var(--arc-green-light);
+    background: var(--arc-amber-dim);
+    border-color: var(--arc-amber-border);
+    color: var(--arc-amber-bright);
 }
 
 .arc-filter-icon-trigger-icon {
@@ -435,8 +477,8 @@
 
 .arc-filter-icon-trigger-arrow {
     flex-shrink: 0;
-    color: var(--arc-green);
-    opacity: 0.5;
+    color: var(--arc-amber);
+    opacity: 0.6;
     transition: transform .15s;
 }
 
@@ -451,8 +493,8 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background: #0e1a14;
-    border: 1px solid rgba(255,255,255,0.08);
+    background: #150c1c;
+    border: 1px solid var(--arc-panel-line);
     border-radius: 6px;
     padding: 4px;
     flex-direction: column;
@@ -470,7 +512,7 @@
     border-radius: 5px;
     border: 1px solid transparent;
     background: transparent;
-    color: var(--muted);
+    color: var(--arc-cream-dim);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -488,14 +530,14 @@
 }
 
 .arc-filter-icon-btn:hover {
-    border-color: var(--arc-green-a25);
-    color: var(--arc-green-light);
+    border-color: var(--arc-amber-border);
+    color: var(--arc-amber-bright);
 }
 
 .arc-filter-icon-btn--active {
-    background: var(--arc-green-a08);
-    border-color: var(--arc-green-a35);
-    color: var(--arc-green-light);
+    background: var(--arc-amber-dim);
+    border-color: var(--arc-amber-border);
+    color: var(--arc-amber-bright);
 }
 
 .arc-filter-icon-btn--hidden {
@@ -510,7 +552,7 @@
     flex-direction: column;
     gap: 14px;
     padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid var(--arc-panel-line);
 }
 
 .arc-upcoming-slot {
@@ -527,16 +569,14 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
-    opacity: 0.5;
+    color: var(--arc-cream-faint);
 }
 
 .arc-upcoming-in {
     font-weight: 400;
     letter-spacing: 0;
     text-transform: none;
-    color: var(--muted);
-    opacity: 0.7;
+    color: var(--arc-cream-faint);
 }
 
 .arc-map-grid--upcoming {

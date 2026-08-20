@@ -278,10 +278,11 @@
             if (el.dataset.questReward) rows.push(['Quest Reward', el.dataset.questReward]);
             if (el.dataset.trialsReward) rows.push(['Trials Reward', el.dataset.trialsReward]);
             meta.innerHTML = rows.map(function (r) {
-                var vals = Array.isArray(r[1]) ? r[1] : [r[1]];
-                return '<div class="arc-info-row"><span class="arc-info-label">' + r[0] + '</span>'
-                    + vals.map(function (v) { return '<span class="arc-info-value">' + v + '</span>'; }).join('')
-                    + '</div>';
+                var label = r[0], val = r[1];
+                var body = Array.isArray(val)
+                    ? '<div class="arc-info-tag-row">' + val.map(function (v) { return '<span class="arc-info-tag">' + v + '</span>'; }).join('') + '</div>'
+                    : '<span class="arc-info-value">' + val + '</span>';
+                return '<div class="arc-info-row"><span class="arc-info-label">' + label + '</span>' + body + '</div>';
             }).join('');
         });
     });
