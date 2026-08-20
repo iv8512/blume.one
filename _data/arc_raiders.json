@@ -2,7 +2,7 @@
   "blueprints": [
     {
       "name": "Extended Shotgun Mag III",
-      "img": "7/77/Extended_Shotgun_Mag_III.png",
+      "img": "Extended_Shotgun_Mag_III.png",
       "map": [
         "Condition Only"
       ],
@@ -20,7 +20,7 @@
     },
     {
       "name": "Angled Grip III",
-      "img": "0/0f/Angled_Grip_III.png",
+      "img": "Angled_Grip_III.png",
       "map": [
         "All"
       ],
@@ -38,7 +38,7 @@
     },
     {
       "name": "Pulse Mine",
-      "img": "a/af/Pulse_Mine.png",
+      "img": "Pulse_Mine.png",
       "map": [
         "Stella Montis"
       ],
@@ -54,7 +54,7 @@
     },
     {
       "name": "Silencer II",
-      "img": "c/c0/Silencer_II.png",
+      "img": "Silencer_II.png",
       "map": [
         "All"
       ],
@@ -70,7 +70,7 @@
     },
     {
       "name": "Red Light Stick",
-      "img": "9/93/Red_Light_Stick.png",
+      "img": "Red_Light_Stick.png",
       "map": [
         "All"
       ],
@@ -86,7 +86,7 @@
     },
     {
       "name": "Tactical Mk. 3 (Revival)",
-      "img": "e/e0/Tactical_Mk._3_%28Revival%29.png",
+      "img": "Tactical_Mk._3_(Revival).png",
       "map": [
         "Stella Montis",
         "The Blue Gate"
@@ -104,7 +104,7 @@
     },
     {
       "name": "Compensator II",
-      "img": "0/0a/Compensator_II.png",
+      "img": "Compensator_II.png",
       "map": [
         "All"
       ],
@@ -120,7 +120,7 @@
     },
     {
       "name": "Muzzle Brake III",
-      "img": "a/a2/Muzzle_Brake_III.png",
+      "img": "Muzzle_Brake_III.png",
       "map": [
         "Condition Only"
       ],
@@ -138,7 +138,7 @@
     },
     {
       "name": "Tactical Mk. 3 (Defensive)",
-      "img": "a/a9/Tactical_Mk._3_%28Defensive%29.png",
+      "img": "Tactical_Mk._3_(Defensive).png",
       "map": [
         "Stella Montis",
         "The Blue Gate"
@@ -157,7 +157,7 @@
     },
     {
       "name": "Vita Spray",
-      "img": "1/1d/Vita_Spray.png",
+      "img": "Vita_Spray.png",
       "map": [
         "All"
       ],
@@ -174,7 +174,7 @@
     },
     {
       "name": "Medium Gun Parts",
-      "img": "9/9a/Medium_Gun_Parts.png",
+      "img": "Medium_Gun_Parts.png",
       "map": [
         "All"
       ],
@@ -190,7 +190,7 @@
     },
     {
       "name": "Tagging Grenade",
-      "img": "e/e5/Tagging_Grenade.png",
+      "img": "Tagging_Grenade.png",
       "map": [
         "All"
       ],
@@ -206,7 +206,7 @@
     },
     {
       "name": "Crash Mat",
-      "img": "7/75/Crash_Mat.png",
+      "img": "Crash_Mat.png",
       "map": [
         "?"
       ],
@@ -222,7 +222,7 @@
     },
     {
       "name": "Bobcat",
-      "img": "3/36/Bobcat-Level1.png",
+      "img": "Bobcat_I.png",
       "map": [
         "Condition Only"
       ],
@@ -239,7 +239,7 @@
     },
     {
       "name": "Defibrillator",
-      "img": "5/5f/Defibrillator.png",
+      "img": "Defibrillator.png",
       "map": [
         "All"
       ],
@@ -255,7 +255,7 @@
     },
     {
       "name": "Jupiter",
-      "img": "6/68/Jupiter.png",
+      "img": "Jupiter.png",
       "map": [
         "Condition Only"
       ],
@@ -271,7 +271,7 @@
     },
     {
       "name": "Extended Medium Mag II",
-      "img": "5/50/Extended_Medium_Mag_II.png",
+      "img": "Extended_Medium_Mag_II.png",
       "map": [
         "All"
       ],
@@ -287,7 +287,7 @@
     },
     {
       "name": "Tactical Mk. 3 (Smoke)",
-      "img": "d/d6/Tactical_Mk._3_%28Smoke%29.png",
+      "img": "Tactical_Mk._3_(Smoke).png",
       "map": [
         "?"
       ],
@@ -303,7 +303,7 @@
     },
     {
       "name": "Smoke Grenade",
-      "img": "d/d5/Smoke_Grenade.png",
+      "img": "Smoke_Grenade.png",
       "map": [
         "All"
       ],
@@ -319,7 +319,7 @@
     },
     {
       "name": "Dolabra",
-      "img": "0/07/Dolabra-Level1.png",
+      "img": "Dolabra.png",
       "map": [
         "Condition Only"
       ],
@@ -335,7 +335,7 @@
     },
     {
       "name": "Shotgun Silencer",
-      "img": "4/4d/Shotgun_Silencer.png",
+      "img": "Shotgun_Silencer.png",
       "map": [
         "Condition Only"
       ],
@@ -354,7 +354,7 @@
     },
     {
       "name": "White Flag",
-      "img": "4/43/White_Flag.png",
+      "img": "White_Flag.png",
       "map": [
         "?"
       ],
@@ -370,7 +370,7 @@
     },
     {
       "name": "Extended Light Mag II",
-      "img": "c/cf/Extended_Light_Mag_II.png",
+      "img": "Extended_Light_Mag_II.png",
       "map": [
         "All"
       ],
@@ -386,7 +386,7 @@
     },
     {
       "name": "Showstopper",
-      "img": "1/18/Showstopper.png",
+      "img": "Showstopper.png",
       "map": [
         "All"
       ],
@@ -402,7 +402,7 @@
     },
     {
       "name": "Remote Raider Flare",
-      "img": "f/ff/Remote_Raider_Flare.png",
+      "img": "Remote_Raider_Flare.png",
       "map": [
         "All"
       ],
@@ -418,7 +418,7 @@
     },
     {
       "name": "Angled Grip II",
-      "img": "2/2b/Angled_Grip_II.png",
+      "img": "Angled_Grip_II.png",
       "map": [
         "All"
       ],
@@ -434,7 +434,7 @@
     },
     {
       "name": "Stable Stock III",
-      "img": "e/eb/Stable_Stock_III.png",
+      "img": "Stable_Stock_III.png",
       "map": [
         "Condition Only"
       ],
@@ -452,7 +452,7 @@
     },
     {
       "name": "Aphelion",
-      "img": "8/88/Aphelion.png",
+      "img": "Aphelion.png",
       "map": [
         "Stella Montis"
       ],
@@ -468,7 +468,7 @@
     },
     {
       "name": "Tempest",
-      "img": "c/c9/Tempest-Level1.png",
+      "img": "Tempest_I.png",
       "map": [
         "Condition Only"
       ],
@@ -485,7 +485,7 @@
     },
     {
       "name": "Tactical Mk. 3 (Healing)",
-      "img": "1/12/Tactical_Mk._3_%28Healing%29.png",
+      "img": "Tactical_Mk._3_(Healing).png",
       "map": [
         "Stella Montis",
         "The Blue Gate"
@@ -503,7 +503,7 @@
     },
     {
       "name": "Vertical Grip III",
-      "img": "2/20/Vertical_Grip_III.png",
+      "img": "Vertical_Grip_III.png",
       "map": [
         "Condition Only"
       ],
@@ -521,7 +521,7 @@
     },
     {
       "name": "Wolfpack",
-      "img": "2/24/Wolfpack.png",
+      "img": "Wolfpack.png",
       "map": [
         "Condition Only"
       ],
@@ -537,7 +537,7 @@
     },
     {
       "name": "Combat Mk. 3 (Flanking)",
-      "img": "7/73/Combat_Mk._3_%28Flanking%29.png",
+      "img": "Combat_Mk._3_(Flanking).png",
       "map": [
         "Stella Montis",
         "The Blue Gate"
@@ -555,7 +555,7 @@
     },
     {
       "name": "Torrente",
-      "img": "1/1e/Torrente-Level1.png",
+      "img": "Torrente_I.png",
       "map": [
         "All"
       ],
@@ -571,7 +571,7 @@
     },
     {
       "name": "Jolt Mine",
-      "img": "5/5a/Jolt_Mine.png",
+      "img": "Jolt_Mine.png",
       "map": [
         "All"
       ],
@@ -587,7 +587,7 @@
     },
     {
       "name": "Hullcracker",
-      "img": "b/ba/Hullcracker-Level1.png",
+      "img": "Hullcracker_I.png",
       "map": [
         "N/A"
       ],
@@ -603,7 +603,7 @@
     },
     {
       "name": "Vita Shot",
-      "img": "7/7d/Vita_Shot.png",
+      "img": "Vita_Shot.png",
       "map": [
         "All"
       ],
@@ -620,7 +620,7 @@
     },
     {
       "name": "Deadline",
-      "img": "c/c7/Deadline.png",
+      "img": "Deadline.png",
       "map": [
         "Stella Montis"
       ],
@@ -636,7 +636,7 @@
     },
     {
       "name": "Shotgun Choke II",
-      "img": "6/63/Shotgun_Choke_II.png",
+      "img": "Shotgun_Choke_II.png",
       "map": [
         "All"
       ],
@@ -652,7 +652,7 @@
     },
     {
       "name": "Anvil",
-      "img": "0/00/Anvil-Level1.png",
+      "img": "Anvil_I.png",
       "map": [
         "All"
       ],
@@ -668,7 +668,7 @@
     },
     {
       "name": "Osprey",
-      "img": "a/ae/Osprey-Level1.png",
+      "img": "Osprey_I.png",
       "map": [
         "All"
       ],
@@ -684,7 +684,7 @@
     },
     {
       "name": "Looting Mk. 3 (Survivor)",
-      "img": "7/74/Looting_Mk._3_%28Survivor%29.png",
+      "img": "Looting_Mk._3_(Survivor).png",
       "map": [
         "All"
       ],
@@ -701,7 +701,7 @@
     },
     {
       "name": "Extended Shotgun Mag II",
-      "img": "4/4f/Extended_Shotgun_Mag_II.png",
+      "img": "Extended_Shotgun_Mag_II.png",
       "map": [
         "All"
       ],
@@ -717,7 +717,7 @@
     },
     {
       "name": "Powered Descender",
-      "img": "2/21/Powered_Descender.png",
+      "img": "Powered_Descender.png",
       "map": [
         "?"
       ],
@@ -733,7 +733,7 @@
     },
     {
       "name": "Compensator III",
-      "img": "a/af/Compensator_III.png",
+      "img": "Compensator_III.png",
       "map": [
         "Condition Only"
       ],
@@ -751,7 +751,7 @@
     },
     {
       "name": "Vulcano",
-      "img": "d/da/Vulcano-Level1.png",
+      "img": "Vulcano_I.png",
       "map": [
         "Condition Only"
       ],
@@ -768,7 +768,7 @@
     },
     {
       "name": "Lightweight Stock",
-      "img": "c/cb/Lightweight_Stock.png",
+      "img": "Lightweight_Stock.png",
       "map": [
         "Condition Only"
       ],
@@ -786,7 +786,7 @@
     },
     {
       "name": "Trailblazer",
-      "img": "8/89/Trailblazer.png",
+      "img": "Trailblazer.png",
       "map": [
         "Stella Montis"
       ],
@@ -802,7 +802,7 @@
     },
     {
       "name": "Barricade Kit",
-      "img": "c/cb/Barricade_Kit.png",
+      "img": "Barricade_Kit.png",
       "map": [
         "All"
       ],
@@ -818,7 +818,7 @@
     },
     {
       "name": "Green Light Stick",
-      "img": "2/27/Green_Light_Stick.png",
+      "img": "Green_Light_Stick.png",
       "map": [
         "All"
       ],
@@ -834,7 +834,7 @@
     },
     {
       "name": "Extended Medium Mag III",
-      "img": "a/a1/Extended_Medium_Mag_III.png",
+      "img": "Extended_Medium_Mag_III.png",
       "map": [
         "Condition Only"
       ],
@@ -852,7 +852,7 @@
     },
     {
       "name": "Lure Grenade",
-      "img": "7/77/Lure_Grenade.png",
+      "img": "Lure_Grenade.png",
       "map": [
         "N/A"
       ],
@@ -868,7 +868,7 @@
     },
     {
       "name": "Combat Mk. 3 (Aggressive)",
-      "img": "a/a4/Combat_Mk._3_%28Aggressive%29.png",
+      "img": "Combat_Mk._3_(Aggressive).png",
       "map": [
         "Stella Montis",
         "The Blue Gate"
@@ -886,7 +886,7 @@
     },
     {
       "name": "Light Gun Parts",
-      "img": "c/c9/Light_Gun_Parts.png",
+      "img": "Light_Gun_Parts.png",
       "map": [
         "All"
       ],
@@ -902,7 +902,7 @@
     },
     {
       "name": "Extended Light Mag III",
-      "img": "4/40/Extended_Light_Mag_III.png",
+      "img": "Extended_Light_Mag_III.png",
       "map": [
         "Condition Only"
       ],
@@ -920,7 +920,7 @@
     },
     {
       "name": "Il Toro",
-      "img": "5/50/Il_Toro-Level1.png",
+      "img": "Il_Toro_I.png",
       "map": [
         "All"
       ],
@@ -936,7 +936,7 @@
     },
     {
       "name": "Padded Stock",
-      "img": "4/4b/Padded_Stock.png",
+      "img": "Padded_Stock.png",
       "map": [
         "Condition Only"
       ],
@@ -955,7 +955,7 @@
     },
     {
       "name": "Heavy Gun Parts",
-      "img": "3/33/Heavy_Gun_Parts.png",
+      "img": "Heavy_Gun_Parts.png",
       "map": [
         "All"
       ],
@@ -971,7 +971,7 @@
     },
     {
       "name": "Rascal",
-      "img": "4/4b/Rascal_II.png",
+      "img": "Rascal_II.png",
       "map": [
         "All"
       ],
@@ -987,7 +987,7 @@
     },
     {
       "name": "Canto",
-      "img": "8/83/Canto-Level1.png",
+      "img": "Canto_I.png",
       "map": [
         "Condition Only"
       ],
@@ -1003,7 +1003,7 @@
     },
     {
       "name": "Bettina",
-      "img": "a/ac/Bettina.png",
+      "img": "Bettina_I.png",
       "map": [
         "All"
       ],
@@ -1019,7 +1019,7 @@
     },
     {
       "name": "Fireworks Box",
-      "img": "0/0f/Fireworks_Box.png",
+      "img": "Fireworks_Box.png",
       "map": [
         "Condition Only"
       ],
@@ -1035,7 +1035,7 @@
     },
     {
       "name": "Gas Mine",
-      "img": "c/ce/Gas_Mine.png",
+      "img": "Gas_Mine.png",
       "map": [
         "Stella Montis"
       ],
@@ -1051,7 +1051,7 @@
     },
     {
       "name": "Yellow Light Stick",
-      "img": "1/1f/Yellow_Light_Stick.png",
+      "img": "Yellow_Light_Stick.png",
       "map": [
         "All"
       ],
@@ -1067,7 +1067,7 @@
     },
     {
       "name": "Looting Mk. 3 (Safekeeper)",
-      "img": "c/c6/Looting_Mk._3_%28Safekeeper%29.png",
+      "img": "Looting_Mk._3_(Safekeeper).png",
       "map": [
         "All"
       ],
@@ -1084,7 +1084,7 @@
     },
     {
       "name": "Surge Coil",
-      "img": "5/5b/Surge_Coil.png",
+      "img": "Surge_Coil.png",
       "map": [
         "Condition Only"
       ],
@@ -1100,7 +1100,7 @@
     },
     {
       "name": "Complex Gun Parts",
-      "img": "3/3d/Complex_Gun_Parts.png",
+      "img": "Complex_Gun_Parts.png",
       "map": [
         "All"
       ],
@@ -1116,7 +1116,7 @@
     },
     {
       "name": "Explosive Mine",
-      "img": "2/22/Explosive_Mine.png",
+      "img": "Explosive_Mine.png",
       "map": [
         "All"
       ],
@@ -1132,7 +1132,7 @@
     },
     {
       "name": "Venator",
-      "img": "b/b4/Venator-Level1.png",
+      "img": "Venator_I.png",
       "map": [
         "All"
       ],
@@ -1148,7 +1148,7 @@
     },
     {
       "name": "Stable Stock II",
-      "img": "b/b4/Stable_Stock_II.png",
+      "img": "Stable_Stock_II.png",
       "map": [
         "All"
       ],
@@ -1164,7 +1164,7 @@
     },
     {
       "name": "Blaze Grenade",
-      "img": "2/24/Blaze_Grenade.png",
+      "img": "Blaze_Grenade.png",
       "map": [
         "All"
       ],
@@ -1180,7 +1180,7 @@
     },
     {
       "name": "Trigger 'Nade",
-      "img": "c/cc/Trigger_%27Nade.png",
+      "img": "Trigger_Nade.png",
       "map": [
         "All"
       ],
@@ -1196,7 +1196,7 @@
     },
     {
       "name": "Seeker Grenade",
-      "img": "3/35/Seeker_Grenade.png",
+      "img": "Seeker_Grenade.png",
       "map": [
         "Stella Montis"
       ],
@@ -1212,7 +1212,7 @@
     },
     {
       "name": "Silencer I",
-      "img": "f/f7/Silencer_I.png",
+      "img": "Silencer_I.png",
       "map": [
         "All"
       ],
@@ -1228,7 +1228,7 @@
     },
     {
       "name": "Shotgun Choke III",
-      "img": "3/36/Shotgun_Choke_III.png",
+      "img": "Shotgun_Choke_III.png",
       "map": [
         "Condition Only"
       ],
@@ -1246,7 +1246,7 @@
     },
     {
       "name": "Blue Light Stick",
-      "img": "c/cc/Blue_Light_Stick.png",
+      "img": "Blue_Light_Stick.png",
       "map": [
         "All"
       ],
@@ -1262,7 +1262,7 @@
     },
     {
       "name": "Vertical Grip II",
-      "img": "3/3c/Vertical_Grip_II.png",
+      "img": "Vertical_Grip_II.png",
       "map": [
         "All"
       ],
@@ -1278,7 +1278,7 @@
     },
     {
       "name": "Extended Barrel II",
-      "img": "d/d4/Extended_Barrel_II.png",
+      "img": "Extended_Barrel_II.png",
       "map": [
         "?"
       ],
@@ -1294,7 +1294,7 @@
     },
     {
       "name": "Muzzle Brake II",
-      "img": "2/23/Muzzle_Brake_II.png",
+      "img": "Muzzle_Brake_II.png",
       "map": [
         "All"
       ],
@@ -1310,7 +1310,7 @@
     },
     {
       "name": "Extended Barrel III",
-      "img": "c/c5/Extended_Barrel_III.png",
+      "img": "Extended_Barrel_III.png",
       "map": [
         "Condition Only"
       ],
@@ -1328,7 +1328,7 @@
     },
     {
       "name": "Burletta",
-      "img": "d/d4/Burletta-Level1.png",
+      "img": "Burletta_I.png",
       "map": [
         "N/A"
       ],
@@ -1344,7 +1344,7 @@
     },
     {
       "name": "Equalizer",
-      "img": "9/96/Equalizer.png",
+      "img": "Equalizer.png",
       "map": [
         "Condition Only"
       ],
@@ -1360,7 +1360,7 @@
     },
     {
       "name": "Snap Hook",
-      "img": "5/56/Snap_Hook.png",
+      "img": "Snap_Hook.png",
       "map": [
         "Condition Only"
       ],

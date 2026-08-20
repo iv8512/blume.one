@@ -57,14 +57,14 @@
                         {% for bp in site.data.arc_raiders.blueprints %}
                         <div class="arc-bp-item"
                             data-name="{{ bp.name }}"
-                            data-img="https://arcraiders.wiki/w/images/{{ bp.img }}"
+                            data-img="/assets/img/arc-raiders/blueprints/{{ bp.img }}"
                             data-map="{{ bp.map | join: '|' }}"
                             data-condition="{{ bp.condition | join: '|' }}"
                             data-containers="{{ bp.containers | join: '|' }}"
                             data-scavengable="{{ bp.scavengable }}"
                             data-quest-reward="{{ bp.quest_reward }}"
                             data-trials-reward="{{ bp.trials_reward }}">
-                            <img src="https://arcraiders.wiki/w/images/{{ bp.img }}" alt="{{ bp.name }}" loading="lazy">
+                            <img src="/assets/img/arc-raiders/blueprints/{{ bp.img }}" alt="{{ bp.name }}" loading="lazy">
                             <span>{{ bp.name }}</span>
                         </div>
                         {% endfor %}
