@@ -6,3 +6,4 @@ exclude:
   - Gemfile.lock
   - README.md
   - todo.md
+  - notes

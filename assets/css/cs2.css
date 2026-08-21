@@ -1,3 +1,78 @@
+/* ── theme tokens (pulled straight from the CS2 client's own panorama CSS: t-color, ct-color, backgroundGradient, positiveColor) ── */
+
+#cs2 {
+    --cs2-bg: #14202b;
+    --cs2-bg-deep: #0c141c;
+    --cs2-text: #e7e9ec;
+    --cs2-muted: rgba(231,233,236,0.55);
+    --cs2-gold: #eabe54;
+    --cs2-gold-bright: #f6d383;
+    --cs2-gold-dim: rgba(234,190,84,0.13);
+    --cs2-gold-border: rgba(234,190,84,0.35);
+    --cs2-blue: #96c8fa;
+    --cs2-blue-dim: rgba(150,200,250,0.12);
+    --cs2-blue-border: rgba(150,200,250,0.32);
+    --cs2-green: #0f9d58;
+    --cs2-green-dim: rgba(15,157,88,0.18);
+    --cs2-green-border: rgba(15,157,88,0.45);
+    --cs2-line: rgba(255,255,255,0.08);
+}
+
+/* ── background & panel ─────────────────────────────── */
+
+.second-page.cs2-theme {
+    align-items: flex-start;
+    background: linear-gradient(160deg, var(--cs2-bg) 0%, var(--cs2-bg-deep) 100%);
+}
+
+#cs2 .second-page-content.cs2-panel {
+    max-width: 98vw;
+    width: 98vw;
+    margin: 0 auto;
+    padding: 32px 2vw;
+    color: var(--cs2-text);
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* ── header (Valve's own cs2_logo_horizontal.svg, inlined and recolored) ── */
+
+.cs2-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#cs2 h2.cs2-title.section-title {
+    margin: 0;
+    line-height: 1;
+}
+
+.cs2-logo {
+    height: 30px;
+    width: auto;
+    color: var(--cs2-gold);
+}
+
+.cs2-logo path {
+    fill: currentColor;
+}
+
+#cs2 h2.cs2-title.section-title:hover .cs2-logo {
+    color: var(--cs2-gold-bright);
+}
+
+.cs2-stripe {
+    width: 100%;
+    height: 3px;
+    margin: 22px 0 28px;
+    background-color: var(--cs2-gold);
+    opacity: 0.5;
+}
+
 /* ── layout ─────────────────────────────────────────── */
 
 .cs2-body {
@@ -5,7 +80,6 @@
     grid-template-columns: 1fr 1.5fr;
     gap: 20px;
     text-align: left;
-    margin-top: 8px;
     align-items: start;
 }
 
@@ -17,20 +91,21 @@
 }
 
 .cs2-block {
-    background: rgba(0,0,0,0.18);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 10px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--cs2-line);
     padding: 16px 18px;
+    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
 }
 
 .cs2-block h3 {
-    font-size: 0.75rem;
+    font-family: 'Barlow Semi Condensed', system-ui, sans-serif;
+    font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
-    opacity: 0.9;
-    border-bottom: 1px solid rgba(197,155,26,0.2);
+    color: var(--cs2-gold);
+    opacity: 0.95;
+    border-bottom: 1px solid var(--cs2-gold-border);
     padding-bottom: 8px;
     margin: 0 0 12px 0;
 }
@@ -48,8 +123,8 @@
     font-weight: 600;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: var(--muted);
-    opacity: 0.55;
+    color: var(--cs2-blue);
+    opacity: 0.85;
     margin-bottom: 6px;
 }
 
@@ -64,11 +139,11 @@
     align-items: center;
     gap: 5px;
     padding: 4px 13px;
-    border-radius: 20px;
+    border-radius: 3px;
     font-size: 0.85rem;
-    color: var(--text);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.09);
+    color: var(--cs2-text);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--cs2-line);
     transition: background .13s, border-color .13s, color .13s;
     text-decoration: none;
     white-space: nowrap;
@@ -82,9 +157,9 @@
 }
 
 .cs2-pill:hover {
-    background: rgba(197,155,26,0.12);
-    border-color: rgba(197,155,26,0.4);
-    color: var(--accent-weak);
+    background: var(--cs2-gold-dim);
+    border-color: var(--cs2-gold-border);
+    color: var(--cs2-gold-bright);
     transform: none;
 }
 
@@ -101,15 +176,15 @@
     align-items: center;
     gap: 8px;
     padding: 6px 8px;
-    border-radius: 6px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 3px;
+    background: rgba(255,255,255,0.015);
+    border: 1px solid var(--cs2-line);
     font-size: 0.82rem;
 }
 
 .cs2-alias-from {
     font-family: 'Courier New', Courier, monospace;
-    color: rgba(154, 164, 178, 0.65);
+    color: var(--cs2-muted);
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -117,47 +192,122 @@
 }
 
 .cs2-alias-diff {
-    color: var(--accent);
+    color: var(--cs2-gold);
     opacity: 1;
 }
 
 .cs2-alias-arrow {
-    color: var(--accent);
+    color: var(--cs2-gold);
     opacity: 0.5;
     flex-shrink: 0;
 }
 
 .cs2-alias-to {
     font-family: 'Courier New', Courier, monospace;
-    color: var(--accent-weak);
+    color: var(--cs2-blue);
     flex-shrink: 0;
 }
 
 .cs2-alias-to:hover {
-    color: var(--accent);
+    color: var(--cs2-gold-bright);
     transform: none;
 }
 
-/* ── commands ────────────────────────────────────────── */
+/* ── commands (styled as a developer console window) ─── */
 
 .commands-hint {
     font-size: 0.75rem;
-    color: var(--muted);
+    color: var(--cs2-muted);
     margin: -6px 0 10px 0;
-    opacity: 0.55;
+    opacity: 0.75;
 }
+
+.cs2-block.cs2-console {
+    padding: 0;
+    background: rgba(0,0,0,0.15);
+}
+
+.cs2-block h3.cs2-console-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 18px;
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid var(--cs2-gold-border);
+}
+
+.cs2-block h3.cs2-console-titlebar::before {
+    content: '>_';
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.75;
+}
+
+.cs2-console-body {
+    padding: 14px 18px 16px;
+}
+
+.cs2-console-prompt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 5px 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+}
+
+.cs2-console-prompt-glyph {
+    color: var(--cs2-gold);
+    opacity: 0.5;
+}
+
+.cs2-console-caret {
+    width: 7px;
+    height: 14px;
+    background: var(--cs2-gold-bright);
+    animation: cs2-caret-blink 1s step-end infinite;
+}
+
+@keyframes cs2-caret-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+.cs2-commands { counter-reset: cs2-cat; }
 
 .cmd-group { margin-bottom: 14px; }
 .cmd-group:last-child { margin-bottom: 0; }
 
 .cmd-group-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: var(--muted);
-    opacity: 0.5;
+    color: var(--cs2-blue);
+    opacity: 0.85;
     margin-bottom: 4px;
+}
+
+.cs2-commands .cmd-group-label::before {
+    counter-increment: cs2-cat;
+    content: counter(cs2-cat);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.66rem;
+    color: var(--cs2-gold);
+    border: 1px solid var(--cs2-gold-border);
+    background: var(--cs2-gold-dim);
 }
 
 .cmd {
@@ -165,34 +315,41 @@
     align-items: baseline;
     gap: 10px;
     padding: 5px 8px;
-    border-radius: 6px;
+    border-radius: 3px;
     cursor: pointer;
     border: 1px solid transparent;
     transition: background .12s, border-color .12s;
 }
 
+.cmd::before {
+    content: ']';
+    color: var(--cs2-gold);
+    opacity: 0.5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .cmd:hover {
-    background: rgba(197,155,26,0.07);
-    border-color: rgba(197,155,26,0.18);
+    background: var(--cs2-gold-dim);
+    border-color: var(--cs2-gold-border);
 }
 
 .cmd--copied {
-    background: rgba(197,155,26,0.15) !important;
-    border-color: rgba(197,155,26,0.4) !important;
+    background: var(--cs2-green-dim) !important;
+    border-color: var(--cs2-green-border) !important;
 }
 
 .cmd-text {
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.85rem;
-    color: var(--accent-weak);
+    color: var(--cs2-gold-bright);
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 .cmd-desc {
     font-size: 0.78rem;
-    color: var(--muted);
-    opacity: 0.65;
+    color: var(--cs2-muted);
+    opacity: 0.8;
 }
 
 /* ── quick setup ─────────────────────────────────────── */
@@ -206,15 +363,19 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
-    background: rgba(197,155,26,0.04);
-    border: 1px solid rgba(197,155,26,0.18);
+    background: var(--cs2-gold-dim);
+    border: 1px solid var(--cs2-gold-border);
     padding: 10px 12px;
     min-width: 0;
 }
 
+.cmd--full::before {
+    display: none;
+}
+
 .cmd--full:hover {
-    background: rgba(197,155,26,0.09);
-    border-color: rgba(197,155,26,0.32);
+    background: rgba(234,190,84,0.2);
+    border-color: var(--cs2-gold-bright);
 }
 
 .cmd-text--full {
@@ -236,14 +397,14 @@
 }
 
 .cs2-quote-item {
-    background: rgba(197,155,26,0.04);
-    border: 1px solid rgba(197,155,26,0.18);
-    border-radius: 6px;
+    background: var(--cs2-blue-dim);
+    border: 1px solid var(--cs2-blue-border);
+    border-radius: 3px;
     padding: 7px 16px;
     font-size: 0.88rem;
     font-style: italic;
     font-family: 'Courier New', Courier, monospace;
-    color: var(--accent-weak);
+    color: var(--cs2-blue);
     letter-spacing: 0.02em;
 }
 
@@ -251,5 +412,5 @@
 
 @media (max-width: 900px) {
     .cs2-body { grid-template-columns: 1fr; }
-    .second-page-content--wide { max-width: 100%; }
+    #cs2 .second-page-content.cs2-panel { max-width: 100%; }
 }

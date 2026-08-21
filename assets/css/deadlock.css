@@ -1,0 +1,644 @@
+/* ── theme tokens (pulled from Deadlock's own citadel_base_styles.css) ── */
+
+#deadlock {
+    --dl-bg: #0b0d08;
+    --dl-ink: #05060a;
+    --dl-text: #FFEFD7;
+    --dl-muted: rgba(255,239,215,0.55);
+    --dl-soul: #70F8C1;
+    --dl-soul-dim: rgba(112,248,193,0.14);
+    --dl-soul-border: rgba(112,248,193,0.28);
+    --dl-gold: #FFED79;
+    --dl-line: rgba(255,239,215,0.08);
+    --dl-danger: #FF8F73;
+}
+
+/* ── background & panel ─────────────────────────────── */
+
+.second-page.deadlock-theme {
+    position: relative;
+    overflow: hidden;
+    align-items: flex-start;
+    background: radial-gradient(120% 100% at 50% 0%, #12160f 0%, var(--dl-bg) 45%, var(--dl-ink) 100%);
+}
+
+.second-page.deadlock-theme::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/img/deadlock/grain.png');
+    background-repeat: repeat;
+    background-size: 200px 254px;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+#deadlock .second-page-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 98vw;
+    width: 98vw;
+    margin: 0 auto;
+    padding: 32px 2vw;
+    color: var(--dl-text);
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* ── board (timeline + side stack, side by side) ────── */
+
+.dl-board {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
+    gap: 24px;
+    text-align: left;
+}
+
+.dl-card--timeline {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.dl-side {
+    flex: 2 1 0;
+    min-width: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.dl-side-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .dl-side {
+        flex: 0 0 320px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 900px) {
+    .dl-board {
+        flex-direction: column;
+    }
+    .dl-side {
+        flex-basis: auto;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .dl-side-col {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 640px) {
+    .dl-side {
+        flex-direction: column;
+    }
+    .dl-side-col {
+        flex-basis: auto;
+    }
+}
+
+.dl-card {
+    min-width: 0;
+    padding: 22px 24px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--dl-line);
+    border-radius: 10px;
+}
+
+.dl-card--wide {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.dl-card-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dl-soul);
+    opacity: 0.85;
+    margin: 0 0 16px 0;
+}
+
+.dl-card-title + .dl-card-subtitle {
+    margin-top: -8px;
+}
+
+.dl-card-title + .dl-composition {
+    margin-top: -8px;
+}
+
+.dl-composition {
+    margin: 0 0 16px;
+}
+
+.dl-composition p {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--dl-muted);
+    margin: 0 0 4px;
+}
+
+.dl-composition p:last-child {
+    margin-bottom: 0;
+}
+
+.dl-card-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--dl-muted);
+    margin: 0 0 16px 0;
+}
+
+/* ── header ──────────────────────────────────────────── */
+
+.dl-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.dl-logo {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    fill: var(--dl-soul);
+    filter: drop-shadow(0 0 12px rgba(112,248,193,0.5));
+}
+
+.dl-header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+#deadlock .dl-title.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dl-text);
+    text-shadow: 0 0 18px rgba(112,248,193,0.3);
+    margin: 0;
+    line-height: 1;
+}
+
+#deadlock .dl-title.section-title:hover {
+    color: var(--dl-soul);
+}
+
+.dl-tagline {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--dl-soul);
+    opacity: 0.7;
+}
+
+.dl-stripe {
+    width: 100%;
+    height: 6px;
+    margin: 26px 0 32px;
+    background-color: var(--dl-soul);
+    opacity: 0.4;
+    -webkit-mask-image: url('/assets/img/deadlock/stripes.svg');
+    -webkit-mask-repeat: repeat-x;
+    -webkit-mask-size: 14px 6px;
+    mask-image: url('/assets/img/deadlock/stripes.svg');
+    mask-repeat: repeat-x;
+    mask-size: 14px 6px;
+}
+
+/* ── link pills ──────────────────────────────────────── */
+
+.deadlock-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.deadlock-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.92rem;
+    color: var(--dl-text);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--dl-line);
+    transition: background .13s, border-color .13s, color .13s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.deadlock-pill:hover {
+    background: var(--dl-soul-dim);
+    border-color: var(--dl-soul-border);
+    color: var(--dl-soul);
+    transform: none;
+}
+
+/* ── objective timeline ─────────────────────────────── */
+
+.dl-timeline {
+    position: relative;
+}
+
+.dl-timeline-line {
+    position: absolute;
+    left: 128px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--dl-soul-border) 3%, var(--dl-soul-border) 97%, transparent);
+}
+
+.dl-timeline-row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 0;
+}
+
+.dl-timeline-row:not(:first-child) {
+    border-top: 1px solid var(--dl-line);
+}
+
+.dl-timeline-dot-col {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 20px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.dl-timeline-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dl-soul);
+    box-shadow: 0 0 8px rgba(112,248,193,0.6);
+}
+
+.dl-timeline-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.dl-timeline-body {
+    flex: 1;
+    min-width: 0;
+    padding-top: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dl-timeline-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.dl-timeline-entry-text {
+    min-width: 0;
+}
+
+.dl-timeline-name {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--dl-text);
+}
+
+.dl-timeline-time {
+    flex-shrink: 0;
+    width: 96px;
+    align-self: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--dl-soul);
+    text-align: right;
+    white-space: nowrap;
+}
+
+.dl-timeline-detail {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--dl-muted);
+}
+
+/* ── boxes ──────────────────────────────────────────── */
+
+.deadlock-boxes-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+.deadlock-boxes-stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-top: 1px solid var(--dl-line);
+}
+
+.deadlock-boxes-stat:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.deadlock-boxes-stat-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: var(--dl-soul);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.dl-souls-icon {
+    width: 20px;
+    height: auto;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.deadlock-boxes-stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--dl-muted);
+}
+
+.dl-stat-note {
+    margin: -4px 0 10px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--dl-muted);
+}
+
+.deadlock-boxes-stats:last-child .deadlock-boxes-stat:last-child {
+    padding-bottom: 0;
+}
+
+.deadlock-boxes-stats:last-child > .dl-stat-note:last-child {
+    margin-bottom: 0;
+}
+
+/* ── resistance bars ─────────────────────────────────── */
+
+.dl-resist-stats {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--dl-line);
+}
+
+.dl-resist-caveats {
+    margin-top: 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--dl-line);
+}
+
+.dl-resist-extra {
+    margin: 8px 0 0;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--dl-muted);
+}
+
+.dl-resist-extra:first-child {
+    margin-top: 0;
+}
+
+.dl-resist-track {
+    position: relative;
+    height: 7px;
+    border-radius: 3.5px;
+    background: linear-gradient(90deg, var(--dl-soul) 0%, rgba(255,239,215,0.1) 50%, var(--dl-danger) 100%);
+    margin: 24px 0 8px;
+    cursor: crosshair;
+}
+
+.dl-card-subtitle + .dl-resist-track {
+    margin-top: 34px;
+}
+
+.dl-resist-cursor {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 2px;
+    height: 16px;
+    background: var(--dl-text);
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .12s;
+}
+
+.dl-resist-tooltip {
+    position: absolute;
+    left: 0;
+    top: -34px;
+    transform: translateX(-50%);
+    background: var(--dl-ink);
+    border: 1px solid var(--dl-soul-border);
+    color: var(--dl-text);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .12s;
+}
+
+.dl-resist-track.is-hovering .dl-resist-zero,
+.dl-resist-track.is-hovering .dl-resist-zero-label {
+    opacity: 0.25;
+}
+
+.dl-resist-track.is-hovering .dl-resist-cursor,
+.dl-resist-track.is-hovering .dl-resist-tooltip {
+    opacity: 1;
+}
+
+.dl-resist-zero {
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    width: 2px;
+    height: 16px;
+    background: var(--dl-text);
+    opacity: 0.55;
+    transform: translateX(-50%);
+}
+
+.dl-resist-zero-label {
+    position: absolute;
+    left: 50%;
+    top: -21px;
+    transform: translateX(-50%);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.78rem;
+    color: var(--dl-muted);
+    white-space: nowrap;
+}
+
+.dl-resist-scale {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+}
+
+.dl-resist-pos {
+    color: var(--dl-soul);
+}
+
+.dl-resist-neg {
+    color: var(--dl-danger);
+}
+
+/* ── tier track (golden statue) ─────────────────────── */
+
+.dl-tier-track {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0 8px;
+    padding-top: 4px;
+}
+
+.dl-tier-line {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: 8px;
+    height: 2px;
+    background: var(--dl-line);
+}
+
+.dl-tier {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.dl-tier-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dl-soul);
+    box-shadow: 0 0 8px rgba(112,248,193,0.55);
+}
+
+.dl-tier-value {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--dl-soul);
+}
+
+.dl-tier-time {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    color: var(--dl-muted);
+}
+
+.dl-tier-caption {
+    margin: 4px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--dl-muted);
+}
+
+/* ── rule chips ──────────────────────────────────────── */
+
+.dl-rule {
+    padding-left: 14px;
+    border-left: 2px solid var(--dl-soul-border);
+    margin-bottom: 12px;
+}
+
+.dl-rule:last-child {
+    margin-bottom: 0;
+}
+
+.dl-rule-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--dl-soul);
+    margin-bottom: 6px;
+}
+
+.dl-rule-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.dl-rule-text {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--dl-muted);
+}
+
+.deadlock-timers-note {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--dl-muted);
+    margin: 8px 0 0;
+}
+
+.deadlock-timers-note a {
+    color: var(--dl-soul);
+}

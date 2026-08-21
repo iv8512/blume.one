@@ -24,7 +24,7 @@ title: Link Collection
                 </ol>
             </div>
             <div class="card">
-                <h1>Deadlock</h1>
+                <h1><a href="#deadlock" class="card-title-link">Deadlock</a></h1>
                 <ol>
                     {% for link in site.data.links.deadlock %}
                     <li><a href="{{ link.url }}">{{ link.name }}</a></li>
@@ -49,3 +49,4 @@ title: Link Collection
 
 {% include sections/cs2.html %}
 {% include sections/arc-raiders.html %}
+{% include sections/deadlock.html %}

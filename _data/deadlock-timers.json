@@ -1,0 +1,74 @@
+{
+  "objectives": [
+    { "icon": "midboss",   "name": "Mid Boss",           "first_spawn": "0:00",       "respawn": "7:00 → 6:00 (2nd) → 5:00 (3rd+)", "detail": "Alive in the pit from the start; killing it drops a Rejuvenator." },
+    { "icon": "trooper",   "name": "Troopers",           "first_spawn": "0:00",       "respawn": "0:30 → 0:25 (20:00) → 0:20 (35:00)", "detail": "Spawn rate increases at 20:00 and 35:00; +50% max HP and larger model after 35:00." },
+    { "icon": "camp1",     "name": "Tier 1 camp",        "first_spawn": "2:00",       "respawn": "1:25",   "detail": "Easy neutral camps across the jungle." },
+    { "icon": "statue",    "name": "Golden Statues",     "first_spawn": "3:00",       "respawn": "3:00",   "detail": "Tier 1 buffs at spawn; upgrades to Tier 2 at 10:00, Tier 3 at 30:00." },
+    { "icon": "soul",      "name": "Crates",             "first_spawn": "3:00",       "respawn": "3:00",   "detail": "Around the map; value grows over time." },
+    { "icon": "camp2",     "name": "Tier 2 camp",        "first_spawn": "5:00",       "respawn": "4:50",   "detail": "Medium neutral camps." },
+    { "icon": "powerup",   "name": "Powerup",            "first_spawn": "5:00",       "respawn": "5:00",   "detail": "2 pickups on the map." },
+    { "icon": "camp3",     "name": "Tier 3 camp",        "first_spawn": "8:00",       "respawn": "5:35",   "detail": "Hard neutral camps; take 20% less melee damage." },
+    { "icon": "sacrifice", "name": "Sinner's Sacrifice", "first_spawn": "8:00",       "respawn": "5:00",   "detail": "Sacrifice machines appear." },
+    { "icon": "urn",       "name": "Soul Urn",           "first_spawn": "10:00",      "respawn": "5:00",   "detail": "Descends and lands ~12s after spawning." },
+    { "icon": "rift",      "name": "Unstable Rift",      "first_spawn": "11:00 ±1:00", "respawn": "~7:00 ±1:00", "detail": "Opens into a capture point 20s after appearing." },
+    { "icon": "guardian",  "name": "Guardians",          "first_spawn": "12:00",      "respawn": "N/A",    "detail": "Reach max damage resistance reduction (-50%)." },
+    { "icon": "walker",    "name": "Walkers",            "first_spawn": "18:00",      "respawn": "N/A",    "detail": "Reach max damage resistance reduction (-65%)." }
+  ],
+  "boxes": {
+    "drop_chance": "60%",
+    "base_value": 23,
+    "growth_per_minute": 2,
+    "first_spawn_time": "3:00",
+    "first_spawn_value": 29,
+    "mid_first_spawn_time": "10:00",
+    "respawn": "3:00"
+  },
+  "resistances": [
+    { "name": "Guardians", "subtitle": "Damage resistance falls as the match goes on, so they get easier to kill over time.", "start_pct": 50, "start_sec": 0, "start_time": "0:00", "zero_time": "6:00", "max_pct": -50, "max_sec": 720, "max_time": "12:00",
+      "stats": [
+        { "label": "Lane", "bullet": "10%" },
+        { "label": "Base", "bullet": "20%" }
+      ],
+      "caveats": [
+        "Spirit resist is fixed at 0% for both.",
+        "Base Guardians scale from 40% down to 20% resist per nearby enemy hero.",
+        "All Guardians take an extra -25% bullet resist specifically against players."
+      ] },
+    { "name": "Walkers", "subtitle": "Damage resistance falls as the match goes on, so they get easier to kill over time.", "start_pct": 65, "start_sec": 0, "start_time": "0:00", "zero_time": "9:00", "max_pct": -65, "max_sec": 1080, "max_time": "18:00",
+      "stats": [
+        { "label": "Fixed", "bullet": "35%" }
+      ],
+      "caveats": [
+        "Spirit resist is fixed at 0%.",
+        "Gains extra weapon-damage resist per nearby enemy within 51m: +20% at 3 enemies, up to +50% at 6 (multiplicative). No bonus with 1-2 enemies."
+      ] }
+  ],
+  "buff_stats": [
+    { "label": "Rejuvenator duration", "value": "3:00", "note": "Team-wide buffs + instant respawns; ends early once all credits are spent." },
+    { "label": "Powerup duration", "value": "2:40", "note": "Won't always still be up for the first Rift fight, which can spawn anywhere from 11:00 to 13:00." }
+  ],
+  "troopers": {
+    "composition": [
+      "0:00-5:00 waves: 3 Ranged + 1 Medic.",
+      "After 5:00: 2 Ranged + 1 Melee + 1 Medic."
+    ],
+    "spirit_resist": [
+      { "time": "25:00", "pct": "20%" },
+      { "time": "50:00", "pct": "70%" }
+    ]
+  },
+  "golden_statue_tiers": [
+    { "tier": "I", "time": "0:00", "hp": "+15 HP" },
+    { "tier": "II", "time": "10:00", "hp": "+20 HP" },
+    { "tier": "III", "time": "30:00", "hp": "+30 HP" }
+  ],
+  "rules": [
+    { "tag": "Neutral Camps", "text": "Every camp (and Sinner's Sacrifice site) only starts its respawn timer once every creature in it is dead. A single survivor blocks the clock." },
+    { "tag": "Mixed-tier camps", "text": "If a camp spawns with more than one creature tier in it (e.g. some Tier 2s plus a Tier 3), the whole camp follows the respawn timing of its highest tier." },
+    { "tag": "Sinner's Sacrifice", "text": "Some sites have two Sacrifice machines guarded by an extra neutral creep. You must destroy both machines and kill that creep before the site's respawn timer starts." },
+    { "tag": "Soul Urn", "text": "The first Urn always spawns on the map's Yellow side, then alternates Yellow/Green sides each cycle. Picking it up early delays the next scheduled spawn until it's delivered or expires." },
+    { "tag": "Unstable Rift", "text": "Spawns on a random side-lane bridge each time; it isn't confirmed to alternate sides." }
+  ],
+  "source_name": "Deadlock Wiki",
+  "source_url": "https://deadlock.wiki/The_Cursed_Apple"
+}

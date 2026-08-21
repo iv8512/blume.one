@@ -7,7 +7,26 @@
             <div class="arc-main-row">
 
                 <div class="arc-events-section">
-                    <h2 class="section-title">ARC Raiders</h2>
+                    <h2 class="section-title arc-title">
+                        <svg viewBox="0 0 62 32" fill="none" aria-hidden="true">
+                            <mask id="arc-logo-stripe" width="62" height="32" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#fff" d="M.157.013h61.126V31.19H.157z"></path></mask>
+                            <g mask="url(#arc-logo-stripe)">
+                                <path stroke="#D00000" stroke-width="1.254" d="M323.215 118.365H170.753a119.45 119.45 0 0 1-61.511-17.059 119.45 119.45 0 0 1-43.94-46.303L-65.962-191.869"></path>
+                                <path stroke="#C82451" stroke-width="1.254" d="M-59.873-195.106 71.391 51.766c19.58 36.826 57.654 59.703 99.362 59.703h152.461"></path>
+                                <path stroke="#FF5600" stroke-width="1.254" d="M324.312 162.25H167.658a94.36 94.36 0 0 1-83.308-50.057L-56.924-153.505"></path>
+                                <path stroke="#E6A34C" stroke-width="1.254" d="M-50.835-156.742 90.439 108.956c15.217 28.619 44.806 46.398 77.22 46.398h156.653"></path>
+                                <path stroke="#00A900" stroke-width="1.254" d="M-164.853 293.279h65.975c57.08 0 108.71-29.211 138.108-78.138s30.951-108.227 4.154-158.626L-100.61-214.296"></path>
+                                <path stroke="#57BB7C" stroke-width="1.254" d="M-94.52-217.534 49.473 53.278c7.253 13.641 12.603 28.016 15.902 42.726a164.7 164.7 0 0 1 3.84 43.07c-1.194 27.863-9.519 55.395-24.074 79.619s-34.956 44.5-58.998 58.635a164.7 164.7 0 0 1-39.83 16.829c-14.538 3.993-29.742 6.018-45.191 6.018h-65.975"></path>
+                                <path stroke="#75B8DD" stroke-width="1.254" d="M-175.248 204.882h43.035c13.863 0 27.507-1.818 40.553-5.401a147.8 147.8 0 0 0 35.745-15.103c21.575-12.685 39.882-30.88 52.943-52.618C10.09 110.023 17.56 85.316 18.632 60.312a147.8 147.8 0 0 0-3.447-38.652C12.225 8.46 7.424-4.44.915-16.68l-126.329-237.593"></path>
+                                <path stroke="#0093ED" stroke-width="1.254" d="M-131.503-251.036-5.173-13.443c23.93 45.006 22.543 97.96-3.71 141.652s-72.357 69.776-123.33 69.776h-43.035"></path>
+                                <path stroke="red" stroke-width="6.896" d="M323.214 114.917H170.752c-42.886 0-82.272-23.666-102.406-61.532L-62.918-193.487"></path>
+                                <path stroke="#FFEA00" stroke-width="6.896" d="M324.312 158.802H167.658c-33.614 0-64.484-18.549-80.264-48.228L-53.88-155.124"></path>
+                                <path stroke="#05FF74" stroke-width="6.896" d="M-97.565-215.915 46.428 54.897c58.283 109.613-21.161 241.83-145.306 241.83h-65.975"></path>
+                                <path stroke="#5FFFFF" stroke-width="6.896" d="M-128.459-252.654-2.129-15.062c52.177 98.13-18.944 216.496-130.084 216.496h-43.035"></path>
+                            </g>
+                        </svg>
+                        <span>Arc Raiders</span>
+                    </h2>
                     <div class="arc-links">
                         {% for link in arc.links %}
                         <a class="arc-link-pill" href="{{ link.url }}" target="_blank" rel="noopener">
@@ -57,14 +76,14 @@
                         {% for bp in site.data.arc_raiders.blueprints %}
                         <div class="arc-bp-item"
                             data-name="{{ bp.name }}"
-                            data-img="https://arcraiders.wiki/w/images/{{ bp.img }}"
+                            data-img="/assets/img/arc-raiders/blueprints/{{ bp.img }}"
                             data-map="{{ bp.map | join: '|' }}"
                             data-condition="{{ bp.condition | join: '|' }}"
                             data-containers="{{ bp.containers | join: '|' }}"
                             data-scavengable="{{ bp.scavengable }}"
                             data-quest-reward="{{ bp.quest_reward }}"
                             data-trials-reward="{{ bp.trials_reward }}">
-                            <img src="https://arcraiders.wiki/w/images/{{ bp.img }}" alt="{{ bp.name }}" loading="lazy">
+                            <img src="/assets/img/arc-raiders/blueprints/{{ bp.img }}" alt="{{ bp.name }}" loading="lazy">
                             <span>{{ bp.name }}</span>
                         </div>
                         {% endfor %}
