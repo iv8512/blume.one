@@ -5,7 +5,7 @@
       "title": "CS2",
       "span": 2,
       "aliases": [
-        { "before": "",             "diff": "w",    "after": "steamcommunity.com", "to_name": "cswatch.in",  "to_url": "https://cswatch.in/" },
+        { "before": "",             "diff": "c",    "after": "steamcommunity.com", "to_name": "csrep.gg",    "to_url": "https://csrep.gg/" },
         { "before": "",             "diff": "x",    "after": "steamcommunity.com", "to_name": "csstats.gg",  "to_url": "https://csstats.gg/" },
         { "before": "steamcommunity", "diff": ".gg",  "after": "",                 "to_name": "leetify.com", "to_url": "https://leetify.com/" },
         { "before": "steamcommunity", "diff": ".rip", "after": "",                 "to_name": "csst.at",     "to_url": "https://csst.at/" }
