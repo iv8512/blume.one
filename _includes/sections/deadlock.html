@@ -41,12 +41,12 @@
                         <span class="dl-timeline-dot-col" aria-hidden="true"><span class="dl-timeline-dot"></span></span>
                         <div class="dl-timeline-body">
                             {% for o in group.items %}
-                            {% assign ext = 'png' %}{% if o.icon == 'powerup' %}{% assign ext = 'svg' %}{% endif %}
+                            {% assign ext = 'png' %}{% if o.icon == 'powerup' or o.icon == 'soul' %}{% assign ext = 'svg' %}{% endif %}
                             <div class="dl-timeline-entry">
                                 <img class="dl-timeline-icon" src="/assets/img/deadlock/{{ o.icon }}.{{ ext }}" alt="">
                                 <div class="dl-timeline-entry-text">
                                     <span class="dl-timeline-name">{{ o.name }}</span>
-                                    <p class="dl-timeline-detail">{{ o.detail }}{% unless o.respawn == "—" %} Respawns {{ o.respawn }}.{% endunless %}</p>
+                                    <p class="dl-timeline-detail">{{ o.detail }}{% unless o.respawn == "N/A" %} Respawns {{ o.respawn }}.{% endunless %}</p>
                                 </div>
                             </div>
                             {% endfor %}
@@ -58,8 +58,61 @@
 
             <div class="dl-side">
 
+              <div class="dl-side-col">
+
+                {% for r in dl.resistances %}
                 <div class="dl-card">
-                    <h3 class="dl-card-title">Boxes</h3>
+                    <h3 class="dl-card-title">{{ r.name }}</h3>
+                    <p class="dl-card-subtitle">{{ r.subtitle }}</p>
+                    <div class="dl-resist-track" data-start-pct="{{ r.start_pct }}" data-start-sec="{{ r.start_sec }}" data-max-pct="{{ r.max_pct }}" data-max-sec="{{ r.max_sec }}">
+                        <span class="dl-resist-zero"></span>
+                        <span class="dl-resist-zero-label">0% @ {{ r.zero_time }}</span>
+                        <span class="dl-resist-cursor"></span>
+                        <span class="dl-resist-tooltip"></span>
+                    </div>
+                    <div class="dl-resist-scale">
+                        <span class="dl-resist-pos">{{ r.start_pct }}% resist @ {{ r.start_time }}</span>
+                        <span class="dl-resist-neg">{{ r.max_pct }}% resist @ {{ r.max_time }}</span>
+                    </div>
+                    <div class="deadlock-boxes-stats dl-resist-stats">
+                        {% for s in r.stats %}
+                        <div class="deadlock-boxes-stat">
+                            <span class="deadlock-boxes-stat-label">{{ s.label }}</span>
+                            <span class="deadlock-boxes-stat-value">{{ s.bullet }} bullet resist</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="dl-resist-caveats">
+                        {% for c in r.caveats %}
+                        <p class="dl-resist-extra">{{ c }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="dl-card">
+                    <h3 class="dl-card-title">Troopers</h3>
+                    <div class="dl-composition">
+                        {% for line in dl.troopers.composition %}
+                        <p>{{ line }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="deadlock-boxes-stats">
+                        {% for sr in dl.troopers.spirit_resist %}
+                        <div class="deadlock-boxes-stat">
+                            <span class="deadlock-boxes-stat-label">Spirit Resist @ {{ sr.time }}</span>
+                            <span class="deadlock-boxes-stat-value">{{ sr.pct }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+              </div>
+
+              <div class="dl-side-col">
+
+                <div class="dl-card">
+                    <h3 class="dl-card-title">Crates</h3>
                     <div class="deadlock-boxes-stats">
                         <div class="deadlock-boxes-stat">
                             <span class="deadlock-boxes-stat-label">Drop Chance</span>
@@ -67,17 +120,68 @@
                         </div>
                         <div class="deadlock-boxes-stat">
                             <span class="deadlock-boxes-stat-label">Base Value</span>
-                            <span class="deadlock-boxes-stat-value">{{ dl.boxes.base_value }}</span>
+                            <span class="deadlock-boxes-stat-value"><img class="dl-souls-icon" src="/assets/img/deadlock/soul.svg" alt="">{{ dl.boxes.base_value }}</span>
                         </div>
                         <div class="deadlock-boxes-stat">
                             <span class="deadlock-boxes-stat-label">Growth</span>
-                            <span class="deadlock-boxes-stat-value">+{{ dl.boxes.growth_per_minute }}/min</span>
+                            <span class="deadlock-boxes-stat-value"><img class="dl-souls-icon" src="/assets/img/deadlock/soul.svg" alt="">+{{ dl.boxes.growth_per_minute }}/min</span>
                         </div>
                         <div class="deadlock-boxes-stat">
                             <span class="deadlock-boxes-stat-label">At First Spawn ({{ dl.boxes.first_spawn_time }})</span>
-                            <span class="deadlock-boxes-stat-value">{{ dl.boxes.first_spawn_value }}</span>
+                            <span class="deadlock-boxes-stat-value"><img class="dl-souls-icon" src="/assets/img/deadlock/soul.svg" alt="">{{ dl.boxes.first_spawn_value }}</span>
+                        </div>
+                        <div class="deadlock-boxes-stat">
+                            <span class="deadlock-boxes-stat-label">Respawn</span>
+                            <span class="deadlock-boxes-stat-value">{{ dl.boxes.respawn }}</span>
+                        </div>
+                        <div class="deadlock-boxes-stat">
+                            <span class="deadlock-boxes-stat-label">Mid Crates Spawn</span>
+                            <span class="deadlock-boxes-stat-value">{{ dl.boxes.mid_first_spawn_time }}</span>
                         </div>
                     </div>
+                </div>
+
+                <div class="dl-card">
+                    <h3 class="dl-card-title">Statues</h3>
+                    <p class="dl-card-subtitle">Every Golden Statue on the map gives this max HP buff, by tier.</p>
+                    <div class="dl-tier-track">
+                        <span class="dl-tier-line"></span>
+                        {% for t in dl.golden_statue_tiers %}
+                        <div class="dl-tier">
+                            <span class="dl-tier-dot"></span>
+                            <span class="dl-tier-value">{{ t.hp }}</span>
+                            <span class="dl-tier-time">{{ t.time }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <p class="dl-tier-caption">A second group of 8 statues spawns above Mid Boss at 10:00.</p>
+                </div>
+
+                <div class="dl-card">
+                    <h3 class="dl-card-title">Buffs</h3>
+                    <div class="deadlock-boxes-stats">
+                        {% for s in dl.buff_stats %}
+                        <div class="deadlock-boxes-stat">
+                            <span class="deadlock-boxes-stat-label">{{ s.label }}</span>
+                            <span class="deadlock-boxes-stat-value">{{ s.value }}</span>
+                        </div>
+                        {% if s.note %}<p class="dl-stat-note">{{ s.note }}</p>{% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+              </div>
+
+              <div class="dl-side-col">
+
+                <div class="dl-card">
+                    <h3 class="dl-card-title">Rules to Know</h3>
+                    {% for rule in dl.rules %}
+                    <div class="dl-rule">
+                        <span class="dl-rule-tag">{% if rule.icon %}<img class="dl-rule-icon" src="/assets/img/deadlock/{{ rule.icon }}.svg" alt="">{% endif %}{{ rule.tag }}</span>
+                        <p class="dl-rule-text">{{ rule.text }}</p>
+                    </div>
+                    {% endfor %}
                 </div>
 
                 <div class="dl-card">
@@ -92,6 +196,8 @@
                     </div>
                 </div>
 
+              </div>
+
             </div>
 
         </div>
@@ -100,3 +206,4 @@
 
     </div>
 </section>
+<script src="/assets/js/deadlock.js"></script>
