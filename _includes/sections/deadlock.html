@@ -1,4 +1,5 @@
 {% assign dl = site.data['deadlock-timers'] %}
+{% assign dl_items = site.data['deadlock-items'] %}
 <section class="second-page deadlock-theme" id="deadlock">
     <div class="second-page-content second-page-content--wide dl-panel">
 
@@ -23,10 +24,16 @@
             </svg>
             <span class="dl-header-text">
                 <h2 class="section-title dl-title">Deadlock</h2>
-                <span class="dl-tagline">Cheat Sheet</span>
             </span>
+            <div class="dl-stripe" aria-hidden="true"></div>
+            <div class="dl-tabs" role="tablist">
+                <button type="button" class="dl-tab is-active" data-dl-tab="cheatsheet" role="tab" aria-selected="true">Cheat Sheet</button>
+                <button type="button" class="dl-tab" data-dl-tab="items" role="tab" aria-selected="false">Items</button>
+                <button type="button" class="dl-tab" data-dl-tab="roulette" role="tab" aria-selected="false">Randomizer</button>
+            </div>
         </div>
-        <div class="dl-stripe" aria-hidden="true"></div>
+
+        <div class="dl-tab-panel is-active" data-dl-tab-panel="cheatsheet">
 
         <div class="dl-board">
 
@@ -203,6 +210,122 @@
         </div>
 
         <p class="deadlock-timers-note">Elapsed match time, approximate and subject to balance patches. See <a href="{{ dl.source_url }}" target="_blank" rel="noopener">{{ dl.source_name }}</a> for current values.</p>
+
+        </div>
+
+        <div class="dl-tab-panel" data-dl-tab-panel="items" hidden>
+            <div class="dl-shop">
+                {% for cat in dl_items.categories %}
+                <div class="dl-shop-col dl-shop-col--{{ cat.key }}">
+                    <h3 class="dl-shop-cat"><span class="dl-shop-cat-icon" style="--icon-img:url('/assets/img/deadlock/items/icons/tab-{{ cat.key }}.png');" aria-hidden="true"></span>{{ cat.label }}</h3>
+                    {% for t in cat.tiers %}
+                    <div class="dl-shop-tier">
+                        <div class="dl-shop-tier-head">
+                            <span class="dl-shop-tier-name">Tier {{ t.tier }}</span>
+                            <span class="dl-shop-tier-cost"><img class="dl-souls-icon" src="/assets/img/deadlock/soul.svg" alt="">{{ t.cost }}</span>
+                        </div>
+                        <div class="dl-shop-grid">
+                            {% for item in t.items %}
+                            <div class="dl-item-card dl-item-card--tier-{{ t.tier }}" style="--card-bg:url('/assets/img/deadlock/items/cards/bg-{{ cat.key }}-{{ t.tier }}.png'); --icon-img:url('{{ item.icon }}'); --icon-mask:url('/assets/img/deadlock/items/cards/icon-mask-{{ item.maskVariant }}.png'); --wear-mask:url('/assets/img/deadlock/items/cards/wear-{{ item.wearVariant }}.png'); --wear-color:{{ t.wearColor }}; --wear-opacity:{{ t.wearOpacity }}; --cat-color:var(--dl-cat-{{ cat.key }}); --badge-shape:url('/assets/img/deadlock/items/cards/tier-badge-shape.svg'); --tier-num:url('/assets/img/deadlock/items/cards/tier-num-{{ t.tier }}.svg'); --num-width:{{ t.numWidth }}; --num-right:{{ t.numRight }}; --name-color-hi:{{ cat.nameColorHi }};" data-tip-name="{{ item.name }}" data-tip-icon="{{ item.icon }}" data-tip-cost="{{ t.cost }}" data-tip-tier="{{ t.tier }}" data-tip-cat="{{ cat.key }}" data-tip="{{ item.tip | jsonify | escape }}">
+                                <div class="dl-item-card-frame">
+                                    <div class="dl-item-card-icon-area">
+                                        <div class="dl-item-card-icon"></div>
+                                        <div class="dl-item-card-tier-badge">
+                                            <div class="dl-item-card-tier-fill"></div>
+                                            <div class="dl-item-card-tier-num"></div>
+                                        </div>
+                                        {% if item.isImbue %}<div class="dl-item-card-imbue-tag">Imbue</div>{% endif %}
+                                    </div>
+                                    <div class="dl-item-card-name-area">
+                                        <div class="dl-item-card-name">{{ item.name }}</div>
+                                    </div>
+                                </div>
+                                <div class="dl-item-card-wear"></div>
+                                <div class="dl-item-card-bevel"></div>
+                                {% if item.isActive %}<div class="dl-item-card-active-tag">Active</div>{% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="dl-tip" id="dl-tip" aria-hidden="true">
+                <div class="dl-tip-header"><span class="dl-tip-name"></span></div>
+                <div class="dl-tip-body">
+                    <div class="dl-tip-top">
+                        <img class="dl-tip-icon" src="" alt="">
+                        <div class="dl-tip-meta">
+                            <div class="dl-tip-meta-row"><span class="dl-tip-meta-label">Cost</span><span class="dl-tip-meta-value dl-tip-cost"><img class="dl-souls-icon" src="/assets/img/deadlock/soul.svg" alt=""><span></span></span></div>
+                            <div class="dl-tip-meta-row"><span class="dl-tip-meta-label">Tier</span><span class="dl-tip-meta-value dl-tip-tier"></span></div>
+                        </div>
+                    </div>
+                    <div class="dl-tip-infos"></div>
+                    <div class="dl-tip-upgrades dl-tip-upgrades-from"></div>
+                    <div class="dl-tip-upgrades dl-tip-upgrades-to"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-tab-panel" data-dl-tab-panel="roulette" hidden>
+            <div class="dl-roulette">
+                <div class="dl-roulette-settings">
+
+                    <div class="dl-card">
+                        <h3 class="dl-card-title">Categories</h3>
+                        <div class="dl-roulette-chips">
+                            {% for cat in dl_items.categories %}
+                            <label class="dl-roulette-chip" data-cat="{{ cat.key }}">
+                                <input type="checkbox" class="dl-roulette-cat" value="{{ cat.key }}" checked>
+                                <span>{{ cat.label }}</span>
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="dl-card">
+                        <h3 class="dl-card-title">Tiers</h3>
+                        <div class="dl-roulette-chips">
+                            {% for t in (1..4) %}
+                            <label class="dl-roulette-chip">
+                                <input type="checkbox" class="dl-roulette-tier" value="{{ t }}" checked>
+                                <span>Tier {{ t }}</span>
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="dl-card">
+                        <h3 class="dl-card-title">Draw Settings</h3>
+                        <div class="dl-roulette-fields">
+                            <label class="dl-roulette-field"><span>Hand Size</span><input type="number" class="dl-roulette-input" id="dl-hand-size" min="1" max="10" value="5"></label>
+                            <label class="dl-roulette-field"><span>Discards</span><input type="number" class="dl-roulette-input" id="dl-discard-setting" min="0" max="20" value="3"></label>
+                            <label class="dl-roulette-field"><span>Max Picks</span><input type="number" class="dl-roulette-input" id="dl-pick-cap" min="1" max="20" value="6"></label>
+                        </div>
+                        <button type="button" class="dl-roulette-btn dl-roulette-restart">New Draw</button>
+                    </div>
+
+                </div>
+
+                <div class="dl-roulette-board">
+
+                    <div class="dl-roulette-table">
+                        <div class="dl-roulette-table-head">
+                            <h3 class="dl-card-title">Picked</h3>
+                            <span class="dl-roulette-pick-count"><span class="dl-roulette-pick-count-val">0</span> / <span class="dl-roulette-pick-cap-val">6</span></span>
+                        </div>
+                        <div class="dl-roulette-table-slots"></div>
+                    </div>
+
+                    <div class="dl-roulette-hand-area">
+                        <div class="dl-roulette-hand"></div>
+                        <button type="button" class="dl-roulette-btn dl-roulette-discard">Discard <span class="dl-roulette-discard-badge"><span class="dl-roulette-discard-count">3</span> left</span></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
