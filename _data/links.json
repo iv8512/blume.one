@@ -18,6 +18,7 @@
         { "name": "Leetify",           "url": "https://leetify.com/app",       "group": "Stats & Analysis" },
         { "name": "Refrag",            "url": "https://play.refrag.gg/",       "group": "Practice"         },
         { "name": "xplay",             "url": "https://xplay.gg/",             "group": "Practice"         },
+        { "name": "Cybershoke",        "url": "https://cybershoke.net/",       "group": "Practice"         },
         { "name": "CSNades",           "url": "https://csnades.gg/",           "group": "Practice"         },
         { "name": "CS2 Callouts",      "url": "https://cs2callouts.com/",      "group": "Practice"         },
         { "name": "CSSkins",           "url": "https://csgoskins.gg/",         "group": "Skins"            },
